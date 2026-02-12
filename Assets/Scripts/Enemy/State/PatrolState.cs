@@ -27,7 +27,7 @@ public class PatrolState : BaseState
         {
             waitTime += Time.deltaTime;
 
-            if(waitTime > 3)
+            if(waitTime > 1)
             {
                 if(waypointIndex < enemy._path.waypoint.Count - 1)
                 {

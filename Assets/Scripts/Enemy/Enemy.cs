@@ -6,12 +6,16 @@ public class Enemy : MonoBehaviour
     private StateMachine _StateMachine;
     private GameObject _player;
     private NavMeshAgent agent;
+    private Vector3 lastKnowPos;
     public NavMeshAgent Agent => agent;
     public GameObject Player => _player;
+
+    public Vector3 LastKnowPos { get => lastKnowPos; set => lastKnowPos = value; }
 
     [SerializeField]
     private string currentState;
     public Pathh _path;
+    public GameObject DebugSphere;
 
     [Header("SightDistance")]
     public float sightDistance = 20f;
@@ -33,9 +37,10 @@ public class Enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         CanSeePlayer();
         currentState = _StateMachine.activeState.ToString();
+        DebugSphere.transform.position = lastKnowPos;
     }
 
     public bool CanSeePlayer()
@@ -44,7 +49,8 @@ public class Enemy : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, _player.transform.position) < sightDistance)
             {
-                Vector3 targetDirection = _player.transform.position - transform.position - (Vector3.up * eyeHigh);
+                Vector3 targetDirection =   (_player.transform.position
+                                            - transform.position ).normalized;
                 float angletoPlayer = Vector3.Angle(targetDirection, transform.forward);
 
                 if(angletoPlayer >= -fieldview && angletoPlayer <= fieldview)
@@ -65,5 +71,11 @@ public class Enemy : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightDistance);
     }
 }

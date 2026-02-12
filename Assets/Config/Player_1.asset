@@ -15,6 +15,7 @@ MonoBehaviour:
   HP: 10
   Mana: 10
   Exp: 10
-  Speed: 5
+  Speedwalk: 3
+  Speedrun: 6
   Attack: 5
   Def: 1
