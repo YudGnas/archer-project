@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody rb;
     private float speed;
+    private float damage = 10;
     void DestroyBullet()
     {
         Destroy(gameObject);
@@ -22,7 +23,7 @@ public class Bullet : MonoBehaviour
         Invoke("DestroyBullet", 10);
     }
 
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
         // Lấy normal của bề mặt va chạm
         Vector3 normal = collision.contacts[0].normal;
@@ -38,5 +39,17 @@ public class Bullet : MonoBehaviour
 
         // Xoay viên đạn theo hướng mới (để nhìn cho đúng)
         transform.rotation = Quaternion.LookRotation(reflectDir);
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Player_Health player = other.GetComponent<Player_Health>();
+            if (player != null)
+            {
+                player.TakeDamege(damage);
+            }
+        }
     }
 }

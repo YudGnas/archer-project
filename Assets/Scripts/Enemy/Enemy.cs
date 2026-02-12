@@ -49,8 +49,8 @@ public class Enemy : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, _player.transform.position) < sightDistance)
             {
-                Vector3 targetDirection =   (_player.transform.position
-                                            - transform.position ).normalized;
+                Vector3 targetDirection = (_player.transform.position
+                                            - transform.position);//.normalized;
                 float angletoPlayer = Vector3.Angle(targetDirection, transform.forward);
 
                 if(angletoPlayer >= -fieldview && angletoPlayer <= fieldview)

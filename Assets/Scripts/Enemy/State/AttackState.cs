@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AttackState : BaseState
 {
@@ -25,8 +25,13 @@ public class AttackState : BaseState
             moveTime += Time.deltaTime;
             ShootTime += Time.deltaTime;
 
-            enemy.transform.LookAt(enemy.Player.transform);
-            if(ShootTime > enemy.fireRate)
+            Vector3 targetPosition = enemy.Player.transform.position;
+
+            // Giữ nguyên chiều cao của enemy
+            targetPosition.y = enemy.transform.position.y;
+
+            enemy.transform.LookAt(targetPosition);
+            if (ShootTime > enemy.fireRate)
             {
                 Shoot();
             }
@@ -53,12 +58,22 @@ public class AttackState : BaseState
     {
         Transform gunbarrel = enemy.gunBarrel;
 
-        GameObject bullet = GameObject.Instantiate(enemy.bullet, gunbarrel.position, enemy.transform.rotation);
+       
 
-        Vector3 shootDirection = (enemy.Player.transform.position - gunbarrel.transform.position).normalized;
+        for (int i = -2; i <= 2; i++)
+        {   
+            GameObject bullet = GameObject.Instantiate(enemy.bullet, gunbarrel.position, enemy.transform.rotation);
 
-        bullet.GetComponent<Rigidbody>().linearVelocity = Quaternion.AngleAxis(Random.Range(-3f, 3f), Vector3.up) * shootDirection * 40;
+            Vector3 targetPos = enemy.Player.transform.position;
+            targetPos.y = gunbarrel.position.y; // maintain the same altitude
 
+            Vector3 shootDirection = (targetPos - gunbarrel.position).normalized;
+
+            Vector3 spreadDirection =
+                Quaternion.AngleAxis(i * 5f, Vector3.up) * shootDirection;
+
+            bullet.GetComponent<Rigidbody>().linearVelocity = spreadDirection * 40f;
+        }
         ShootTime = 0;
     }
 }
