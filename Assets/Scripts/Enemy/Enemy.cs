@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private Enemy_Infor enemy_Infor;
     private StateMachine _StateMachine;
     private GameObject _player;
     private NavMeshAgent agent;
@@ -28,7 +29,8 @@ public class Enemy : MonoBehaviour
     public float fireRate;
     public GameObject bullet;
     void Start()
-    {
+    {   
+        enemy_Infor._HP = enemy_Infor._maxHP;
         agent = GetComponent<NavMeshAgent>();
         _StateMachine = GetComponent<StateMachine>();
         _StateMachine.Initialise();
@@ -37,7 +39,11 @@ public class Enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {
+        if(enemy_Infor._HP <= 0)
+        {
+            Destroy(gameObject);
+        }
         CanSeePlayer();
         currentState = _StateMachine.activeState.ToString();
         DebugSphere.transform.position = lastKnowPos;
@@ -77,5 +83,11 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightDistance);
+    }
+
+    public void TakeDamege(float damege)
+    {
+        enemy_Infor._HP -= damege;
+        Debug.Log(enemy_Infor._HP);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Fireball : MonoBehaviour
 {
     private Rigidbody rb;
     private float speed;
@@ -51,5 +51,13 @@ public class Bullet : MonoBehaviour
                 player.TakeDamege(damage);
             }
         }
+        /*if (other.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamege(damage);
+            }
+        }*/
     }
 }
