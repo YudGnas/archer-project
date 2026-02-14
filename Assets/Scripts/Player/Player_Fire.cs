@@ -46,14 +46,14 @@ public class Player_Fire : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
         {   
-            Player_Rotation();
-            player_Health.Energyconsumption(10);
+            Player_Rotation();           
             Attack("attack");
             Invoke("Shoot", 0.5f);
             
         }
         if (Input.GetKeyDown(KeyCode.E) && player_Infor._Mana >= aoeManaCost && _timeE <= 0) 
         {
+            Player_Rotation();
             Attack("SkillE");
             Invoke("CastAOE", 0.5f);
         }
@@ -82,6 +82,8 @@ public class Player_Fire : MonoBehaviour
     void Shoot()
     {
         _timebetweefire = timebetweefire;
+
+        player_Health.Energyconsumption(10);
         GameObject bullet = Instantiate(
             bulletPrefab,
             firePoint.position,

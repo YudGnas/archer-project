@@ -1,9 +1,18 @@
+using GLTFast.Schema;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum EnemyRole
+{
+    CloseCombat,
+    Ranged,
+    Boss
+}
+
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Enemy_Infor enemy_Infor;
+    public Enemy_Infor enemy_Infor;
+    [SerializeField] public Animator _animator;
     private StateMachine _StateMachine;
     private GameObject _player;
     private NavMeshAgent agent;
@@ -40,10 +49,19 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy_Infor._HP <= 0)
+        float speed = this.Agent.velocity.magnitude;
+
+        if (speed > 0.1f)
         {
-            Destroy(gameObject);
+            _animator.SetBool("ismoving", true);
         }
+        else
+        {
+            _animator.SetBool("ismoving", false);
+        }
+
+
+
         CanSeePlayer();
         currentState = _StateMachine.activeState.ToString();
         DebugSphere.transform.position = lastKnowPos;
@@ -88,6 +106,12 @@ public class Enemy : MonoBehaviour
     public void TakeDamege(float damege)
     {
         enemy_Infor._HP -= damege;
+        _animator.SetTrigger("GetHit");
         Debug.Log(enemy_Infor._HP);
+        if (enemy_Infor._HP <= 0)
+        {
+            _animator.SetTrigger("die");
+            Destroy(gameObject, 1f);
+        }
     }
 }

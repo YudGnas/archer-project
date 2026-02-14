@@ -1,45 +1,87 @@
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class SearchState : BaseState
 {
+    private float searchTimer;
+    private float moveTimer;
 
-    private float searchTime;
-    private float moveTime;
+    [SerializeField] private float searchDuration = 10f;
+    [SerializeField] private float wanderRadius = 6f;
+    [SerializeField] private float wanderIntervalMin = 2f;
+    [SerializeField] private float wanderIntervalMax = 4f;
+
+    private float currentWanderInterval;
+
     public override void Enter()
     {
+        searchTimer = 0f;
+        moveTimer = 0f;
+
+        enemy.Agent.isStopped = false;
+        enemy.Agent.speed = 5;
+        enemy._animator.SetBool("isRun", true);
+
+        // Đi tới vị trí cuối cùng thấy player
         enemy.Agent.SetDestination(enemy.LastKnowPos);
+
+        // Random thời gian đổi hướng
+        currentWanderInterval = Random.Range(wanderIntervalMin, wanderIntervalMax);
     }
 
     public override void Exit()
     {
-
     }
 
     public override void Perform()
     {
-        if(enemy.CanSeePlayer())
+        // Nếu thấy lại player → chuyển sang Attack
+        if (enemy.CanSeePlayer())
         {
-            _stateMachine.ChangeState(new AttackState());
+            
+                if (enemy.enemy_Infor.role == EnemyRole.CloseCombat)
+                    _stateMachine.ChangeState(new CloseCombatAttackState());
+
+                else if (enemy.enemy_Infor.role == EnemyRole.Ranged)
+                    _stateMachine.ChangeState(new RangedAttackState());
+            
             return;
         }
 
-        if(!enemy.Agent.pathPending &&
+        searchTimer += Time.deltaTime;
+
+        // Nếu tới vị trí cuối cùng
+        if (!enemy.Agent.pathPending &&
             enemy.Agent.remainingDistance <= enemy.Agent.stoppingDistance)
         {
-            searchTime += Time.deltaTime;
-            moveTime += Time.deltaTime;
-            if (moveTime > Random.Range(3, 7))
+            moveTimer += Time.deltaTime;
+
+            // Sau một khoảng thời gian thì đi random xung quanh
+            if (moveTimer >= currentWanderInterval)
             {
-                enemy.Agent.SetDestination(enemy.transform.position + Random.insideUnitSphere * 5);
-                moveTime = 0;
+                Wander();
+                moveTimer = 0f;
+                currentWanderInterval = Random.Range(wanderIntervalMin, wanderIntervalMax);
             }
-            if (searchTime > 10f)
-            {
-                _stateMachine.ChangeState(new PatrolState());
-            }
+        }
+
+        // Hết thời gian tìm kiếm → quay lại Patrol
+        if (searchTimer >= searchDuration)
+        {
+            _stateMachine.ChangeState(new PatrolState());
         }
     }
 
-    
+    private void Wander()
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
+        randomDirection += enemy.transform.position;
+        randomDirection.y = enemy.transform.position.y;
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomDirection, out hit, wanderRadius, NavMesh.AllAreas))
+        {
+            enemy.Agent.SetDestination(hit.position);
+        }
+    }
 }

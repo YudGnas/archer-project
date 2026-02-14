@@ -6,6 +6,8 @@ public class Player_Health : MonoBehaviour
     [SerializeField] private Player_Infor Player_Infor;
 
     public Player_Infor _Infor => Player_Infor;
+
+    private Player_Controller _Controller;
     public float chipSpeed = 2f;
 
     private float leftTime;
@@ -25,6 +27,7 @@ public class Player_Health : MonoBehaviour
 
     void Start()
     {
+        _Controller = GetComponent<Player_Controller>();
         Player_Infor._HP = Player_Infor._maxHP;
         Player_Infor._Mana = Player_Infor._maxMana;
         Player_Infor._Exp = Player_Infor._maxExp;
@@ -100,6 +103,7 @@ public class Player_Health : MonoBehaviour
 
     public void TakeDamege(float damege)
     {
+        _Controller._animator.SetTrigger("GetHit");
         Player_Infor._HP -= damege;
         leftTime = 0;
     }

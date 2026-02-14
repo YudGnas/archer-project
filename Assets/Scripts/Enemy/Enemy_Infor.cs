@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemy", menuName = "Enemy_Infor")]
 public class Enemy_Infor : ScriptableObject
 {
+    public EnemyRole role;
     [SerializeField] private float HP;
     [SerializeField] private float maxHP;
 
