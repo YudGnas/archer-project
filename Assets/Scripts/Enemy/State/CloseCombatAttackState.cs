@@ -6,7 +6,7 @@ public class CloseCombatAttackState : BaseState
     private float attackTimer;
 
     [SerializeField] private float loseDuration = 5f;
-    [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private float rotateSpeed = 30f;
     [SerializeField] private float attackRange = 0.5f;
     [SerializeField] private float attackCooldown = 1.5f;
 

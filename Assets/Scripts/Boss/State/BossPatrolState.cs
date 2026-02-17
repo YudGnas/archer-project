@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
-public class PatrolState : BaseState
-{
+public class BossPatrolState : BossBaseState
+{    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private int waypointIndex;
     private float waitTime;
 
@@ -14,8 +13,8 @@ public class PatrolState : BaseState
         waypointIndex = 0;
         waitTime = 0f;
 
-        enemy.Agent.speed = 3.5f;
-        enemy._animator.SetBool("isRun", false);
+        boss.Agent.speed = 3.5f;
+        boss._animator.SetBool("isRun", false);
 
 
         SetupAgent();
@@ -30,32 +29,27 @@ public class PatrolState : BaseState
     {
         PatrolCircle();
 
-        if (enemy.CanSeePlayer())
-        {   
-            if(enemy.enemy_Infor.role == EnemyRole.CloseCombat)
-                _stateMachine.ChangeState(new CloseCombatAttackState());
-
-            else if (enemy.enemy_Infor.role == EnemyRole.Ranged)
-                _stateMachine.ChangeState(new RangedAttackState());
-
+        if (boss.CanSeePlayer())
+        {
+                _stateMachine.ChangeState(new BossAttackState());
         }
     }
 
     private void SetupAgent()
     {
         // Tránh va chạm thông minh hơn
-        enemy.Agent.avoidancePriority = Random.Range(10, 90);
+        boss.Agent.avoidancePriority = Random.Range(10, 90);
 
         // Không cần đứng đúng tâm waypoint
-        enemy.Agent.stoppingDistance = 1.2f;
+        boss.Agent.stoppingDistance = 1.2f;
     }
 
     private void PatrolCircle()
     {
         // Nếu chưa tới nơi thì return
-        if (enemy.Agent.pathPending) return;
+        if (boss.Agent.pathPending) return;
 
-        if (enemy.Agent.remainingDistance <= enemy.Agent.stoppingDistance)
+        if (boss.Agent.remainingDistance <= boss.Agent.stoppingDistance)
         {
             waitTime += Time.deltaTime;
 
@@ -70,7 +64,7 @@ public class PatrolState : BaseState
 
     private void NextWaypoint()
     {
-        if (waypointIndex < enemy._path.waypoint.Count - 1)
+        if (waypointIndex < boss._path.waypoint.Count - 1)
             waypointIndex++;
         else
             waypointIndex = 0;
@@ -78,7 +72,7 @@ public class PatrolState : BaseState
 
     private void MoveToWaypoint()
     {
-        Vector3 basePosition = enemy._path.waypoint[waypointIndex].position;
+        Vector3 basePosition = boss._path.waypoint[waypointIndex].position;
 
         // Random vị trí xung quanh waypoint
         Vector3 randomOffset = Random.insideUnitSphere * waypointOffsetRadius;
@@ -86,6 +80,6 @@ public class PatrolState : BaseState
 
         Vector3 targetPosition = basePosition + randomOffset;
 
-        enemy.Agent.SetDestination(targetPosition);
+        boss.Agent.SetDestination(targetPosition);
     }
 }

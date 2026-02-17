@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class SearchState : BaseState
+public class BossSearchState : BossBaseState
 {
     private float searchTimer;
     private float moveTimer;
@@ -18,12 +18,12 @@ public class SearchState : BaseState
         searchTimer = 0f;
         moveTimer = 0f;
 
-        enemy.Agent.isStopped = false;
-        enemy.Agent.speed = 5;
-        enemy._animator.SetBool("isRun", true);
+        boss.Agent.isStopped = false;
+        boss.Agent.speed = 5;
+        boss._animator.SetBool("isRun", true);
 
         // Đi tới vị trí cuối cùng thấy player
-        enemy.Agent.SetDestination(enemy.LastKnowPos);
+        boss.Agent.SetDestination(boss.LastKnowPos);
 
         // Random thời gian đổi hướng
         currentWanderInterval = Random.Range(wanderIntervalMin, wanderIntervalMax);
@@ -36,22 +36,17 @@ public class SearchState : BaseState
     public override void Perform()
     {
         // Nếu thấy lại player → chuyển sang Attack
-        if (enemy.CanSeePlayer())
+        if (boss.CanSeePlayer())
         {
-            
-            if (enemy.enemy_Infor.role == EnemyRole.CloseCombat)
-                _stateMachine.ChangeState(new CloseCombatAttackState());
-
-            else if (enemy.enemy_Infor.role == EnemyRole.Ranged)
-                _stateMachine.ChangeState(new RangedAttackState());
+                _stateMachine.ChangeState(new BossAttackState());
             return;
         }
 
         searchTimer += Time.deltaTime;
 
         // Nếu tới vị trí cuối cùng
-        if (!enemy.Agent.pathPending &&
-            enemy.Agent.remainingDistance <= enemy.Agent.stoppingDistance)
+        if (!boss.Agent.pathPending &&
+            boss.Agent.remainingDistance <= boss.Agent.stoppingDistance)
         {
             moveTimer += Time.deltaTime;
 
@@ -67,20 +62,20 @@ public class SearchState : BaseState
         // Hết thời gian tìm kiếm → quay lại Patrol
         if (searchTimer >= searchDuration)
         {
-            _stateMachine.ChangeState(new PatrolState());
+            _stateMachine.ChangeState(new BossPatrolState());
         }
     }
 
     private void Wander()
     {
         Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
-        randomDirection += enemy.transform.position;
-        randomDirection.y = enemy.transform.position.y;
+        randomDirection += boss.transform.position;
+        randomDirection.y = boss.transform.position.y;
 
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomDirection, out hit, wanderRadius, NavMesh.AllAreas))
         {
-            enemy.Agent.SetDestination(hit.position);
+            boss.Agent.SetDestination(hit.position);
         }
     }
 }

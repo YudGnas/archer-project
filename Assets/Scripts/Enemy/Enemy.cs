@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = this.Agent.velocity.magnitude;
+        float speed = Agent.velocity.magnitude;
 
         if (speed > 0.1f)
         {
@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
         DebugSphere.transform.position = lastKnowPos;
     }
 
-    public bool CanSeePlayer()
+    public virtual bool CanSeePlayer()
     {
         if(_path != null)
         {
@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightDistance);
     }
 
-    public void TakeDamege(float damege)
+    public virtual void TakeDamege(float damege)
     {
         enemy_Infor._HP -= damege;
         _animator.SetTrigger("GetHit");
