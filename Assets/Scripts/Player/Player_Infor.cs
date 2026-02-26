@@ -16,8 +16,13 @@ public class Player_Infor : ScriptableObject
     [SerializeField] private float Level;
     [SerializeField] private float Speedrun;
     [SerializeField] private float Speedwalk;
+    [SerializeField] private float Lucky;
 
-
+    public float _lucky
+    {
+        get => Lucky; 
+        set => Lucky = value;
+    }
     public float _Speedrun => Speedrun;
     public float _Speedwalk => Speedwalk;
 
@@ -26,13 +31,21 @@ public class Player_Infor : ScriptableObject
         get => HP;
         set => HP = value;
     }
-    public float _maxHP => maxHP;
+    public float _maxHP
+    {
+        get => maxHP;
+        set => maxHP = value;
+    }
     public float _Mana
     {
         get => Mana;
         set => Mana = value;
     }
-    public float _maxMana => maxMana;
+    public float _maxMana 
+    {
+        get => maxMana;
+        set => maxMana = value;
+    }
     public float _Exp
     {
         get => Exp;
@@ -53,7 +66,11 @@ public class Player_Infor : ScriptableObject
         get => attributepoints;
         set => attributepoints = value;
     }
-    public float _Attack => Attack;
+    public float _Attack
+    {
+        get => Attack;
+        set => Attack = value;
+    }
     public float _level
     {
         get => Level;

@@ -3,27 +3,27 @@
   "WorkspaceRootPath": "C:\\prj unity\\archer project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\player\\player_indexmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_indexmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_infor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_infor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\enemy\\enemy_infor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\enemy\\enemy_infor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemy_infor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,12 +31,8 @@
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\fireball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\fireball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\fireball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,21 +58,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Enemy_Infor.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T13:08:12.23Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:33766704:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
@@ -115,6 +98,57 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Player_Fire.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Fire.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Fire.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAqwFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T17:29:46.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player_IndexManager.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_IndexManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_IndexManager.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_IndexManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_IndexManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T16:44:06.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player_Infor.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Infor.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Infor.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Infor.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Infor.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwEcAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T17:16:17.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Enemy_Infor.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\Enemy_Infor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:08:12.23Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
               "Title": "FireBall.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\FireBall.cs",
@@ -123,8 +157,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Skill\\FireBall.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAowC4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T13:05:33.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-26T13:05:33.492Z"
             },
             {
               "$type": "Document",
@@ -136,12 +169,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Enemy\\Enemy.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAAAHsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T12:53:41.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-26T12:53:41.277Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "fallingice.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\fallingice.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\fallingice.cs",
@@ -155,58 +187,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "SkillBase.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\SkillBase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\SkillBase.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\SkillBase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Skill\\SkillBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T10:50:18.261Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Player_Fire.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Fire.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Fire.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAADwv00AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T17:16:53.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Player_Health.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Health.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Health.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Health.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Health.cs",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAAAKgAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T17:16:19.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player_Infor.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Infor.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Infor.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Infor.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Infor.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAABoAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T17:16:17.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Player_Controller.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Controller.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Controller.cs",
@@ -214,8 +194,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Controller.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAAACUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T16:42:08.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-20T16:42:08.656Z"
             },
             {
               "$type": "Document",
@@ -227,12 +206,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Boss\\Boss.cs",
               "ViewState": "AQIAAGEAAAAAAAAAAAAAAG0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T17:33:19.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T17:33:19.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "RangedAttackState.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\State\\RangedAttackState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\State\\RangedAttackState.cs",
@@ -244,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "BossBaseState.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossBaseState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Boss\\State\\BossBaseState.cs",
@@ -256,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "BaseState.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\State\\BaseState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\State\\BaseState.cs",
@@ -264,8 +242,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Enemy\\State\\BaseState.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAMAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T17:42:06.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T17:42:06.471Z"
             }
           ]
         }

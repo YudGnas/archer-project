@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331542d30ba4b8043ba61881b826fcc7, type: 3}
   m_Name: Player_1
   m_EditorClassIdentifier: Assembly-CSharp::Player_Infor
-  HP: 20
-  maxHP: 100
-  Mana: 100
-  maxMana: 100
-  Exp: 30
-  maxExp: 200
-  skillpoints: 20
-  attributepoints: 6
-  Attack: 5
-  Level: 2
+  HP: 90
+  maxHP: 160
+  Mana: 28
+  maxMana: 130
+  Exp: 90
+  maxExp: 350
+  skillpoints: 21
+  attributepoints: 3
+  Attack: 25
+  Level: 3
   Speedrun: 6
   Speedwalk: 3
+  Lucky: 10

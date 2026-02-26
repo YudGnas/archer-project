@@ -62,11 +62,8 @@ public class Player_Fire : MonoBehaviour
         timeR -= Time.deltaTime; timeR = Mathf.Clamp(timeR, 0f, SkillR.cooldown);
         UpdateSkillUI(CooldownQ, SkillQ, timeQ);
         UpdateSkillUI(CooldownE, SkillE, timeE);
-        UpdateSkillUI(CooldownR, SkillR, timeR);
-    }
-    private void FixedUpdate()
-    {
-        if (Input.GetMouseButtonDown(0) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
+        UpdateSkillUI(CooldownR, SkillR, timeR);        
+        if (Input.GetKeyDown(KeyCode.F) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
         {   
             Player_Rotation();           
             Attack("attack");
@@ -81,6 +78,7 @@ public class Player_Fire : MonoBehaviour
             Invoke("CastAOE", 0.5f);
         }
     }
+
 
     void Player_Rotation()
     {
