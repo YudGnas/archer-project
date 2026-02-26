@@ -31,6 +31,7 @@ public class BossSearchState : BossBaseState
 
     public override void Exit()
     {
+        boss._animator.SetBool("isRun", false);
     }
 
     public override void Perform()

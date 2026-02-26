@@ -8,21 +8,26 @@ public class Boss : MonoBehaviour
     public GameObject warningCirclePrefab;
     public GameObject fireballPrefab;
     public Transform firePoint;
+    [SerializeField] private LayerMask playerLayer;
 
 
     public float maxPoise = 100f;
     public float currentPoise;
+    public float currentHP;
+
 
     public float staggerDuration = 5f;
     private bool isStaggered;
 
-    public bool IsPhase2 => enemy_Infor._HP <= enemy_Infor._maxHP * 0.5f;
+    public bool IsPhase2 => currentHP <= enemy_Infor.maxHP * 0.5f;
 
 
     public Enemy_Infor enemy_Infor;
     [SerializeField] public Animator _animator;
     private BossStateMachine _StateMachine;
     private GameObject _player;
+
+    private Player_Health _Player_Health;
     private NavMeshAgent agent;
     private Vector3 lastKnowPos;
     public NavMeshAgent Agent => agent;
@@ -42,11 +47,12 @@ public class Boss : MonoBehaviour
 
     void Start()
     {
-        enemy_Infor._HP = enemy_Infor._maxHP;
+        currentHP = enemy_Infor.maxHP;
         agent = GetComponent<NavMeshAgent>();
         _StateMachine = GetComponent<BossStateMachine>();
         _StateMachine.Initialise();
         _player = GameObject.FindGameObjectWithTag("Player");
+        _Player_Health = _player.GetComponent<Player_Health>();
     }
 
     void Update()
@@ -76,18 +82,20 @@ public class Boss : MonoBehaviour
                 new Vector3(transform.position.x, 0, transform.position.z),
                 new Vector3(transform.position.x, 0, transform.position.z)) < sightDistance)
             {
-                Vector3 targetDirection = Vector3.ProjectOnPlane(_player.transform.position - transform.position,Vector3.up).normalized;
+                //Vector3 targetDirection = Vector3.ProjectOnPlane(_player.transform.position - transform.position,Vector3.up).normalized;
+                Vector3 targetDirection = (_player.transform.position
+                            - transform.position).normalized;
                 float angletoPlayer = Vector3.Angle(targetDirection, transform.forward);
 
                 if (angletoPlayer >= -fieldview && angletoPlayer <= fieldview)
                 {
                     Ray ray = new Ray(transform.position + (Vector3.up * eyeHigh), targetDirection);
                     RaycastHit hitInfo = new RaycastHit();
-                    if (Physics.Raycast(ray, out hitInfo, sightDistance))
+                    if (Physics.Raycast(ray, out hitInfo, sightDistance, playerLayer))
                     {
                         if (hitInfo.transform.gameObject == _player)
                         {
-                            Debug.DrawRay(ray.origin, ray.direction * sightDistance);
+                            Debug.DrawRay(ray.origin, ray.direction * sightDistance, Color.red);
                             return true;
                         }
                     }
@@ -99,27 +107,6 @@ public class Boss : MonoBehaviour
         return false;
     }
 
-    /*public bool CanSeePlayer()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position, sightDistance);
-
-        foreach (var hit in hits)
-        {
-            if (hit.CompareTag("Player"))
-            {
-                Vector3 dir = hit.transform.position - transform.position;
-                Ray ray = new Ray(transform.position + Vector3.up * eyeHigh, dir);
-
-                if (Physics.Raycast(ray, out RaycastHit info, sightDistance))
-                {
-                    if (info.transform.CompareTag("Player"))
-                        return true;
-                }
-            }
-        }
-
-        return false;
-    }*/
 
     private void OnDrawGizmos()
     {
@@ -127,11 +114,11 @@ public class Boss : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightDistance);
     }
 
-    public void TakeDamage(int damage, float poiseDamage)
+    public void TakeDamage(float damage, float poiseDamage)
     {
-        enemy_Infor._HP -= damage;
+        currentHP -= damage;
         _animator.SetTrigger("GetHit");
-        Debug.Log(enemy_Infor._HP);
+        Debug.Log(currentHP);
 
         currentPoise -= poiseDamage;
         Debug.Log(currentPoise);
@@ -141,9 +128,10 @@ public class Boss : MonoBehaviour
             StartCoroutine(Stagger());
         }
 
-        if (enemy_Infor._HP <= 0)
+        if (currentHP <= 0)
         {
             _animator.SetTrigger("die");
+            _Player_Health.GetXp(100);
             Destroy(gameObject, 1f);
         }
     }

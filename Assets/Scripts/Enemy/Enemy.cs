@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private Vector3 lastKnowPos;
     public NavMeshAgent Agent => agent;
     public GameObject Player => _player;
+    private Player_Health _Player_Health;
 
     public Vector3 LastKnowPos { get => lastKnowPos; set => lastKnowPos = value; }
 
@@ -26,6 +27,9 @@ public class Enemy : MonoBehaviour
     private string currentState;
     public Pathh _path;
     public GameObject DebugSphere;
+
+
+    public float currentHP;
 
     [Header("SightDistance")]
     public float sightDistance = 20f;
@@ -39,11 +43,12 @@ public class Enemy : MonoBehaviour
     public GameObject bullet;
     void Start()
     {   
-        enemy_Infor._HP = enemy_Infor._maxHP;
+        currentHP = enemy_Infor.maxHP;
         agent = GetComponent<NavMeshAgent>();
         _StateMachine = GetComponent<StateMachine>();
         _StateMachine.Initialise();
         _player = GameObject.FindGameObjectWithTag("Player");
+        _Player_Health = _player.GetComponent<Player_Health>();
     }
 
     // Update is called once per frame
@@ -105,12 +110,13 @@ public class Enemy : MonoBehaviour
 
     public virtual void TakeDamege(float damege)
     {
-        enemy_Infor._HP -= damege;
+        currentHP -= damege;
         _animator.SetTrigger("GetHit");
-        Debug.Log(enemy_Infor._HP);
-        if (enemy_Infor._HP <= 0)
+        Debug.Log(currentHP);
+        if (currentHP <= 0)
         {
             _animator.SetTrigger("die");
+            _Player_Health.GetXp(30);
             Destroy(gameObject, 1f);
         }
     }

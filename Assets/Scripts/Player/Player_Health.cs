@@ -16,8 +16,13 @@ public class Player_Health : MonoBehaviour
     public Image backHealthBar;
     public Image backManaBar;
     public Image frontManaBar;
+    public Image frontXPBar;
+    public Image backXPBar;
+
     public Text hp;
     //public Text Mana;
+    public float timeReconvertMana;
+    [SerializeField] private float reconvertMana = 2f;
 
 
     Color frontHP = new Color(113f, 209f, 40f);
@@ -30,17 +35,23 @@ public class Player_Health : MonoBehaviour
         _Controller = GetComponent<Player_Controller>();
         Player_Infor._HP = Player_Infor._maxHP;
         Player_Infor._Mana = Player_Infor._maxMana;
-        Player_Infor._Exp = Player_Infor._maxExp;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeReconvertMana += Time.deltaTime;
+        if (timeReconvertMana > 1)
+        {
+            Energyrecovery(reconvertMana);
+            timeReconvertMana = 0;
+        }
+
         Player_Infor._HP = Mathf.Clamp(Player_Infor._HP, 0, Player_Infor._maxHP);
         Player_Infor._Mana = Mathf.Clamp(Player_Infor._Mana, 0, Player_Infor._maxMana);
         UpdateHealthUI();
         UpdateManaUI();
+        UpdateXPUI();
     }
 
 
@@ -99,6 +110,23 @@ public class Player_Health : MonoBehaviour
             percentComplete = percentComplete * percentComplete;
             frontManaBar.fillAmount = Mathf.Lerp(fillF, backManaBar.fillAmount, percentComplete);
         }
+    }    
+    public void UpdateXPUI()
+    {
+        //Mana.text = Player_Infor._Mana + "/" + Player_Infor._maxMana;
+        float fillF = frontXPBar.fillAmount;
+        float fillB = backXPBar.fillAmount;
+        float hFration = Player_Infor._Exp / Player_Infor._maxExp;
+
+        if (fillB < hFration)
+        {
+            backXPBar.color = frontMana;
+            backXPBar.fillAmount = hFration;
+            leftTime += Time.deltaTime;
+            float percentComplete = leftTime / chipSpeed;
+            percentComplete = percentComplete * percentComplete;
+            frontXPBar.fillAmount = Mathf.Lerp(fillF, backXPBar.fillAmount, percentComplete);
+        }
     }
 
     public void TakeDamege(float damege)
@@ -124,5 +152,22 @@ public class Player_Health : MonoBehaviour
     {
         Player_Infor._Mana += energy; 
         leftTime = 0;
+    }
+
+    public void GetXp(float xp)
+    {
+        Player_Infor._Exp += xp;
+        leftTime = 0;
+
+        if(Player_Infor._Exp >= Player_Infor._maxExp)
+        {
+            Debug.Log("Level Up!!!");
+            Player_Infor._Exp = 0;
+            frontXPBar.fillAmount = 0;
+            Player_Infor._level += 1;
+            Player_Infor._skillpoints += 1;
+            Player_Infor._attributepoints += 3;           
+            Player_Infor._maxExp += 50*Player_Infor._level;
+        }
     }
 }

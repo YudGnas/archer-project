@@ -50,6 +50,7 @@ public class Fireball : MonoBehaviour
             {
                 player.TakeDamege(damage);
             }
+            Destroy(gameObject);
         }
         /*if (other.CompareTag("Enemy"))
         {

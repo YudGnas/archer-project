@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class Player_Fire : MonoBehaviour
 {
     [SerializeField] private Player_Controller controller;
@@ -12,7 +13,7 @@ public class Player_Fire : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed = 20f;
-    [SerializeField] private float reconvertMana = 2f;
+
 
     private bool isAttacking;
 
@@ -20,30 +21,51 @@ public class Player_Fire : MonoBehaviour
 
     private float _timebetweefire;
     public float timebetweefire = 0.5f;
-    private float _timeE;
-    public float timeE = 5f;
-    public float timeReconvertMana;
-    [Header("Skill E")]
-    [SerializeField] private GameObject aoePrefab;
-    [SerializeField] private float aoeManaCost = 30f;
+    [Header("Skill")]
+    [SerializeField] private GameObject SkillQPrefab;
+    [SerializeField] private GameObject SkillEPrefab;
+    [SerializeField] private GameObject SkillRPrefab;
 
-    
+    [SerializeField] private SkillBase SkillQ;
+    [SerializeField] private SkillBase SkillE;
+    [SerializeField] private SkillBase SkillR;
+
+
+    [Header("UI")]
+    public Image CooldownQ;
+    public Image CooldownE;
+    public Image CooldownR;
+    public TextMeshProUGUI cooldownQText;
+    public TextMeshProUGUI cooldownEText;
+    public TextMeshProUGUI cooldownRText;
+    private float timeQ;
+    private float timeE;
+    private float timeR;
+
+
+
+
     void Start()
     {
-        controller = GetComponent<Player_Controller>();
+        controller = GetComponent<Player_Controller>(); 
+        
+        SkillQ = SkillQPrefab.GetComponent<SkillBase>();
+        SkillE = SkillEPrefab.GetComponent<SkillBase>();
+        SkillR = SkillRPrefab.GetComponent<SkillBase>();
     }
 
     void Update()
     {   
         _timebetweefire -= Time.deltaTime;
-        timeReconvertMana += Time.deltaTime;
-        _timeE -= Time.deltaTime;
-
-        if (timeReconvertMana > 1)
-        {
-            player_Health.Energyrecovery(reconvertMana);
-            timeReconvertMana = 0;
-        }
+        timeQ -= Time.deltaTime; timeQ = Mathf.Clamp(timeQ, 0f, SkillQ.cooldown);
+        timeE -= Time.deltaTime; timeE = Mathf.Clamp(timeE, 0f, SkillE.cooldown);
+        timeR -= Time.deltaTime; timeR = Mathf.Clamp(timeR, 0f, SkillR.cooldown);
+        UpdateSkillUI(CooldownQ, SkillQ, timeQ);
+        UpdateSkillUI(CooldownE, SkillE, timeE);
+        UpdateSkillUI(CooldownR, SkillR, timeR);
+    }
+    private void FixedUpdate()
+    {
         if (Input.GetMouseButtonDown(0) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
         {   
             Player_Rotation();           
@@ -51,8 +73,9 @@ public class Player_Fire : MonoBehaviour
             Invoke("Shoot", 0.5f);
             
         }
-        if (Input.GetKeyDown(KeyCode.E) && player_Infor._Mana >= aoeManaCost && _timeE <= 0) 
+        if (Input.GetKeyDown(KeyCode.E) && player_Infor._Mana >= SkillE.ManaCost && timeE <= 0) 
         {
+            timeE = SkillE.cooldown;
             Player_Rotation();
             Attack("SkillE");
             Invoke("CastAOE", 0.5f);
@@ -99,17 +122,16 @@ public class Player_Fire : MonoBehaviour
         //isAttacking = true;
 
         // Dừng di chuyển khi đánh (nếu muốn)
-        controller._rb.linearVelocity = Vector3.zero;
+        controller._controller.Move(Vector3.zero);
 
         // Trigger animation
         controller._animator.SetTrigger(skillname);
         
     }
     public void CastAOE()
-    {
-        _timeE = timeE;
-        player_Health.Energyconsumption(aoeManaCost);
-
+    {   
+        
+        player_Health.Energyconsumption(SkillE.ManaCost);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, transform.position);
 
@@ -117,7 +139,12 @@ public class Player_Fire : MonoBehaviour
         {
             Vector3 spawnPosition = ray.GetPoint(distance);
 
-            GameObject aoe = Instantiate(aoePrefab, spawnPosition + new Vector3(0, 0.3f, 0), Quaternion.identity);
+            GameObject aoe = Instantiate(SkillEPrefab, spawnPosition + new Vector3(0, 0.3f, 0), Quaternion.identity);
         }
+    }
+    public void UpdateSkillUI(Image skillimg, SkillBase skill, float cooldown)
+    {
+        float percent = cooldown / skill.cooldown;
+        skillimg.fillAmount = Mathf.Lerp(skillimg.fillAmount, percent, 10f*Time.deltaTime);
     }
 }

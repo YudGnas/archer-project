@@ -155,6 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74893a55f341eb640a26cc75f783b577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fallingice
+  damage: 100
+  poiseDamage: 20
+  cooldown: 5
+  ManaCost: 30
 --- !u!1001 &111537702459928658
 PrefabInstance:
   m_ObjectHideFlags: 0

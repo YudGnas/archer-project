@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class fallingice : MonoBehaviour
+public class fallingice : SkillBase
 {
     private Rigidbody rb;
     //private float speed;
-    private float damage = 30;
+    private HashSet<GameObject> hitTargets = new HashSet<GameObject>();
+
+
     void DestroyBullet()
     {
         Destroy(gameObject);
@@ -18,7 +21,8 @@ public class fallingice : MonoBehaviour
     }
 
     void Start()
-    {
+    {   
+        
         Invoke("DestroyBullet", 2);
     }
 
@@ -32,6 +36,16 @@ public class fallingice : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamege(damage);
+                
+            }
+            Destroy(gameObject, 2f);
+        }
+        if (other.CompareTag("Boss"))
+        {
+            Boss boss = other.GetComponent<Boss>();
+            if (boss != null)
+            {
+                boss.TakeDamage(damage, poiseDamage);
                 
             }
             Destroy(gameObject, 2f);

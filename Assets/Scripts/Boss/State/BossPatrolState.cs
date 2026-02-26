@@ -14,7 +14,7 @@ public class BossPatrolState : BossBaseState
         waitTime = 0f;
 
         boss.Agent.speed = 3.5f;
-        boss._animator.SetBool("isRun", false);
+        
 
 
         SetupAgent();
