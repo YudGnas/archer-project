@@ -1,17 +1,22 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class fallingice : SkillBase
+public class IceWorld : SkillBase
 {
-    
-    void Start()
-    {   
-        
-        Invoke("DestroyBullet", 2);
+
+    void Update()
+    {
+        Invoke("DestroyBullet", 1f);
     }
+    public override void Shoot(GameObject skillbullet, Transform firepoint)
+    {
 
-
-
+        GameObject bullet = Instantiate(
+            skillbullet,
+            firepoint.position,
+            firepoint.rotation
+        );
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))

@@ -1,16 +1,31 @@
-using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class fallingice : SkillBase
+public class Hack : SkillBase
 {
+
     
-    void Start()
-    {   
-        
-        Invoke("DestroyBullet", 2);
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        Invoke("DestroyBullet", 10);
     }
 
+    public override void Shoot(GameObject skillbullet, Transform firepoint)
+    {
+      
+        GameObject bullet = Instantiate(
+            skillbullet,
+            firepoint.position,
+            firepoint.rotation
+        );
 
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.linearVelocity = firepoint.forward * speed;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

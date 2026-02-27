@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 public class Player_Fire : MonoBehaviour
 {
     [SerializeField] private Player_Controller controller;
@@ -11,7 +12,8 @@ public class Player_Fire : MonoBehaviour
 
 
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform firePoint;
+    [SerializeField] public Transform firePoint;
+    [SerializeField] public Transform firePoint2;
     [SerializeField] private float bulletSpeed = 20f;
 
 
@@ -67,8 +69,8 @@ public class Player_Fire : MonoBehaviour
         {   
             Player_Rotation();           
             Attack("attack");
-            Invoke("Shoot", 0.5f);
-            
+            StartCoroutine(ShootDelay(0.5f, bulletPrefab));
+
         }
         if (Input.GetKeyDown(KeyCode.E) && player_Infor._Mana >= SkillE.ManaCost && timeE <= 0) 
         {
@@ -76,6 +78,22 @@ public class Player_Fire : MonoBehaviour
             Player_Rotation();
             Attack("SkillE");
             Invoke("CastAOE", 0.5f);
+        }
+        if(Input.GetKeyDown(KeyCode.Q) && timeQ <= 0 && player_Infor._Mana >= SkillQ.ManaCost)
+        {
+            timeQ = SkillQ.cooldown;
+            Player_Rotation();
+            Attack("SkillQ");
+            SkillQ.Shoot(SkillQPrefab, firePoint);
+            player_Health.Energyconsumption(SkillQ.ManaCost);
+        }        
+        if(Input.GetKeyDown(KeyCode.R) && timeR <= 0 && player_Infor._Mana >= SkillR.ManaCost)
+        {
+            timeR = SkillR.cooldown;
+            Player_Rotation();
+            Attack("SkillQ");
+            SkillR.Shoot(SkillRPrefab, firePoint2);
+            player_Health.Energyconsumption(SkillR.ManaCost);
         }
     }
 
@@ -100,13 +118,13 @@ public class Player_Fire : MonoBehaviour
         }
     }
 
-    void Shoot()
+    void Shoot(GameObject bulletpre)
     {
         _timebetweefire = timebetweefire;
 
         player_Health.Energyconsumption(10);
         GameObject bullet = Instantiate(
-            bulletPrefab,
+            bulletpre,
             firePoint.position,
             firePoint.rotation
         );
@@ -144,5 +162,11 @@ public class Player_Fire : MonoBehaviour
     {
         float percent = cooldown / skill.cooldown;
         skillimg.fillAmount = Mathf.Lerp(skillimg.fillAmount, percent, 10f*Time.deltaTime);
+    }
+
+    IEnumerator ShootDelay(float delay, GameObject bulletpre)
+    {
+        yield return new WaitForSeconds(delay);
+        Shoot(bulletpre);
     }
 }
