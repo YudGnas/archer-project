@@ -155,10 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74893a55f341eb640a26cc75f783b577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fallingice
+  Player_Fire: {fileID: 0}
   damage: 100
   poiseDamage: 20
   cooldown: 5
   ManaCost: 30
+  speed: 0
 --- !u!1001 &111537702459928658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227,6 +229,10 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2220319803246276148, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7360da3da75ab014298519d5f0f943c8, type: 2}
     - target: {fileID: 2357307127349287299, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: looping
       value: 0
