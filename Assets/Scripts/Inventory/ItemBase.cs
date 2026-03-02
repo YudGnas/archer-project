@@ -16,7 +16,8 @@ public abstract class ItemBase : MonoBehaviour
 
     // ✨ XÓA: Xóa _maxCapacity ở đây, chuyển sang ItemData
 
-    // public abstract void Use(); // Ví dụ về hàm logic vật phẩm
+    // Ví dụ về hàm logic vật phẩm
 
     // Ghi chú: Cần đảm bảo _infor được gán trong Inspector cho Prefab vật phẩm
+
 }

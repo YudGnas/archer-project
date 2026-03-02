@@ -5200,7 +5200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556031769}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player_IndexManager, Assembly-CSharp
         m_MethodName: SaveIndex
         m_Mode: 1
@@ -8390,61 +8390,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544944212}
   m_CullTransparentMesh: 0
---- !u!1 &556031768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 556031770}
-  - component: {fileID: 556031769}
-  m_Layer: 0
-  m_Name: PlayerIndexManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &556031769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556031768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f82765e0279bfd4fb9a3afa680cfa66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player_IndexManager
-  Player_Infor: {fileID: 11400000, guid: 52ef474c84d09d74683caca4658f699d, type: 2}
-  Player_index: {fileID: 2057145289}
-  maxhp: {fileID: 2133393681}
-  maxMana: {fileID: 951444645}
-  Damege: {fileID: 449387510}
-  lucky: {fileID: 903649870}
-  indexpoint: {fileID: 207093541}
-  maxHP_plus: {fileID: 800101603}
-  maxMana_plus: {fileID: 1064648185}
-  Damege_plus: {fileID: 429280073}
-  lucky_plus: {fileID: 1685140347}
---- !u!4 &556031770
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556031768}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 775.3281, y: 593.4785, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &556499643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11140,7 +11085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELL
+  m_Text: USING
 --- !u!222 &734849841
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14847,7 +14792,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556031769}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player_IndexManager, Assembly-CSharp
         m_MethodName: AddHPIndex
         m_Mode: 1
@@ -19995,7 +19940,7 @@ GameObject:
   - component: {fileID: 1372863113}
   - component: {fileID: 1372863112}
   m_Layer: 5
-  m_Name: Button_Sell
+  m_Name: Button_Using
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20065,7 +20010,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1372863113}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1492698929}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: UsingItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1372863113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21906,6 +21863,7 @@ GameObject:
   - component: {fileID: 1492698928}
   - component: {fileID: 1492698929}
   - component: {fileID: 1492698930}
+  - component: {fileID: 1492698931}
   m_Layer: 5
   m_Name: 'Canvas '
   m_TagString: Untagged
@@ -22013,13 +21971,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataManager
   _genaralDataItem:
+  - {fileID: 11400000, guid: deece3647ee76e44c8fd7634ce5cc25a, type: 2}
   - {fileID: 11400000, guid: 1852f00c3b869bc48be414ba4edf42a5, type: 2}
   - {fileID: 11400000, guid: 5b5a5446d131f044ca7e445332251504, type: 2}
   - {fileID: 11400000, guid: cf4c72b236f622846a8b84314bdf42dd, type: 2}
   - {fileID: 11400000, guid: 20a6b8b7b02636147acf1c1a3038b327, type: 2}
   - {fileID: 11400000, guid: 7ec28e959c240b242a029c777c56614a, type: 2}
   - {fileID: 11400000, guid: ef6ba07a6d246344ab681c3508a9e116, type: 2}
-  - {fileID: 11400000, guid: deece3647ee76e44c8fd7634ce5cc25a, type: 2}
   - {fileID: 11400000, guid: 0a1c878c5b436cd42bb05eff0e68b3cb, type: 2}
   - {fileID: 11400000, guid: a249985751309ad4cb69c9aad2de9c67, type: 2}
   - {fileID: 11400000, guid: f33e6f2dee0a28043a434d490be5c476, type: 2}
@@ -22040,6 +21998,7 @@ MonoBehaviour:
   _item:
   - {fileID: 6089217481984260322, guid: 718c11c722ce82e41be050daf079c2ad, type: 3}
   _itemSlot: []
+  _currentSelectedItem: {fileID: 0}
 --- !u!114 &1492698930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22054,6 +22013,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DragItem
   _movingItem: {fileID: 0}
   _parent: {fileID: 0}
+--- !u!114 &1492698931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492698923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f82765e0279bfd4fb9a3afa680cfa66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player_IndexManager
+  Player_Infor: {fileID: 11400000, guid: 52ef474c84d09d74683caca4658f699d, type: 2}
+  Player_index: {fileID: 2057145289}
+  maxhp: {fileID: 2133393681}
+  maxMana: {fileID: 951444645}
+  Damege: {fileID: 449387510}
+  lucky: {fileID: 903649870}
+  indexpoint: {fileID: 207093541}
+  maxHP_plus: {fileID: 800101603}
+  maxMana_plus: {fileID: 1064648185}
+  Damege_plus: {fileID: 429280073}
+  lucky_plus: {fileID: 1685140347}
 --- !u!1 &1493433249
 GameObject:
   m_ObjectHideFlags: 0
@@ -24475,7 +24457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556031769}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player_IndexManager, Assembly-CSharp
         m_MethodName: AddLuckyIndex
         m_Mode: 1
@@ -26441,7 +26423,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556031769}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player_IndexManager, Assembly-CSharp
         m_MethodName: AddManaIndex
         m_Mode: 1
@@ -27737,7 +27719,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556031769}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player_IndexManager, Assembly-CSharp
         m_MethodName: AddDamegeIndex
         m_Mode: 1
@@ -31908,6 +31890,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efab6186a53e2584cb2a006ea786428d, type: 3}
+--- !u!1001 &7663827150941373097
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2757459529218082223, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60.60811
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -88.245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068136174735769185, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978138884710171497, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1492698929}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4151b19cc42e5e84c8870fb24fcf1804, type: 3}
 --- !u!1001 &9059842290337893964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32021,4 +32064,4 @@ SceneRoots:
   - {fileID: 9059842290337893964}
   - {fileID: 643341388}
   - {fileID: 1807757901}
-  - {fileID: 556031770}
+  - {fileID: 7663827150941373097}

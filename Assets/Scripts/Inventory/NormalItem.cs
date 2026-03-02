@@ -27,4 +27,8 @@ public class NormalItem : ItemBase
         _NameItem.text = _infor._name;
         _quantilyItem.text = this._quantity.ToString();
     }
+    public virtual void Use()
+    {
+
+    }
 }

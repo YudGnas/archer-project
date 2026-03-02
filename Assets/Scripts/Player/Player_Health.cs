@@ -170,4 +170,5 @@ public class Player_Health : MonoBehaviour
             Player_Infor._maxExp += 50*Player_Infor._level;
         }
     }
+
 }

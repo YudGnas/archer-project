@@ -33,7 +33,7 @@ public class Player_Fire : MonoBehaviour
     [SerializeField] private SkillBase SkillR;
 
 
-    [Header("UI")]
+    
     public Image CooldownQ;
     public Image CooldownE;
     public Image CooldownR;
@@ -43,6 +43,7 @@ public class Player_Fire : MonoBehaviour
     private float timeQ;
     private float timeE;
     private float timeR;
+    
 
 
 
