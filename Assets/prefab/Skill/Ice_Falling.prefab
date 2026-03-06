@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fallingice
   Player_Fire: {fileID: 0}
-  damage: 100
+  damage: 50
   poiseDamage: 20
   cooldown: 5
   ManaCost: 30

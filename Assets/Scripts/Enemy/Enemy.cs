@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public Enemy_Infor enemy_Infor;
     [SerializeField] public Animator _animator;
     private StateMachine _StateMachine;
+
+    public StateMachine stateMachine => _StateMachine;
     private GameObject _player;
     private NavMeshAgent agent;
     private Vector3 lastKnowPos;

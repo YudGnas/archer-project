@@ -13,7 +13,7 @@ public class BossAttackState : BossBaseState
     private float phase2Cooldown = 2f;
 
     [SerializeField] private float rotateSpeed = 5f;
-    [SerializeField] private int bulletCount = 5;
+    [SerializeField] private int bulletCount = 20;
     [SerializeField] private float spreadAngle = 5f;
     [SerializeField] private float loseDuration = 5f;
 

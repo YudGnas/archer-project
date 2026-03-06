@@ -25,6 +25,7 @@ public class IceWorld : SkillBase
             if (enemy != null && !enemyList.Contains(enemy))
             {
                 enemy.TakeDamege(damage);
+                enemy.stateMachine.ChangeState(new StunState());
                 enemyList.Add(enemy);
             }
             Destroy(gameObject, 2f);
