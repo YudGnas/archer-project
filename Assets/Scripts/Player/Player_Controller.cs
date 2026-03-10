@@ -16,6 +16,7 @@ public class Player_Controller : MonoBehaviour
     public CharacterController _controller;
     public Vector3 velocity; // dùng cho gravity
 
+
     void Start()
     {
         _controller = GetComponent<CharacterController>();
@@ -29,41 +30,39 @@ public class Player_Controller : MonoBehaviour
 
     void Move()
     {
-        float playermovex = Input.GetAxisRaw("Horizontal");
+        float playermovex = Input.GetAxisRaw("Horizontal"); 
         float playermovey = Input.GetAxisRaw("Vertical");
 
-        Vector3 move = new Vector3(playermovex, 0f, playermovey).normalized;
 
-        float speed = Input.GetKey(KeyCode.LeftShift)
-            ? Player_Infor._Speedrun
-            : Player_Infor._Speedwalk;
+        Vector3 camForward = Camera.main.transform.forward;
+        Vector3 camRight = Camera.main.transform.right;
 
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward.Normalize();
+        camRight.Normalize();
+        Vector3 move = (camForward * playermovey + camRight * playermovex).normalized;
+
+        float speed = Input.GetKey(KeyCode.LeftShift) ? Player_Infor._Speedrun : Player_Infor._Speedwalk; 
         if (move != Vector3.zero)
-        {
+        { 
             // Di chuyển
-            _controller.Move(move * speed * Time.deltaTime);
-
+            _controller.Move(move * speed * Time.deltaTime); 
             // Xoay hướng theo move
-            Quaternion targetRotation = Quaternion.LookRotation(move);
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                targetRotation,
-                rotateSpeed * Time.deltaTime
-            );
-        }
-
+            Quaternion targetRotation = Quaternion.LookRotation(move); 
+            transform.rotation = Quaternion.Slerp( transform.rotation, targetRotation, rotateSpeed * Time.deltaTime ); 
+        } 
         // Animation
         _animator.SetFloat("walk", move.magnitude);
-        _animator.SetBool("isRunning", Input.GetKey(KeyCode.LeftShift));
-    }
-
-    void ApplyGravity()
-    {
-        if (_controller.isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f; // giữ dính đất
+        _animator.SetBool("isRunning", Input.GetKey(KeyCode.LeftShift)); 
+    } 
+    void ApplyGravity() 
+    { 
+        if (_controller.isGrounded && velocity.y < 0) 
+        { 
+            velocity.y = -2f; 
         }
-
         velocity.y += gravity * Time.deltaTime;
         _controller.Move(velocity * Time.deltaTime);
     }

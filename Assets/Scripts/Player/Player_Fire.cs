@@ -74,11 +74,10 @@ public class Player_Fire : MonoBehaviour
 
         }
         if (Input.GetKeyDown(KeyCode.E) && player_Infor._Mana >= SkillE.ManaCost && timeE <= 0) 
-        {
-            timeE = SkillE.cooldown;
+        {        
             Player_Rotation();
             Attack("SkillE");
-            Invoke("CastAOE", 0.5f);
+            timeE = SkillE.cooldown;
         }
         if(Input.GetKeyDown(KeyCode.Q) && timeQ <= 0 && player_Infor._Mana >= SkillQ.ManaCost)
         {
@@ -146,8 +145,7 @@ public class Player_Fire : MonoBehaviour
         
     }
     public void CastAOE()
-    {   
-        
+    {          
         player_Health.Energyconsumption(SkillE.ManaCost);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, transform.position);

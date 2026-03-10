@@ -13,7 +13,7 @@ public class BossAttackState : BossBaseState
     private float phase2Cooldown = 2f;
 
     [SerializeField] private float rotateSpeed = 5f;
-    [SerializeField] private int bulletCount = 20;
+    [SerializeField] private int bulletCount => boss.IsPhase2() ? 60 : 20;
     [SerializeField] private float spreadAngle = 5f;
     [SerializeField] private float loseDuration = 5f;
 
@@ -24,7 +24,7 @@ public class BossAttackState : BossBaseState
         isAttacking = false;
 
         boss.Agent.isStopped = true;
-        if (boss.IsPhase2)
+        if (boss.IsPhase2())
         {
             boss.Agent.speed = 6f;
             boss.Agent.acceleration = 20f;
@@ -46,7 +46,7 @@ public class BossAttackState : BossBaseState
 
         attackTimer += Time.deltaTime;
 
-        float cooldown = boss.IsPhase2 ? phase2Cooldown : phase1Cooldown;
+        float cooldown = boss.IsPhase2() ? phase2Cooldown : phase1Cooldown;
 
 
         if (boss.CanSeePlayer())
@@ -59,7 +59,7 @@ public class BossAttackState : BossBaseState
             {
                 attackTimer = 0f;
 
-                if (boss.IsPhase2)
+                if (boss.IsPhase2())
                     boss.StartCoroutine(ComboAttack());
                 else
                     boss.StartCoroutine(SmartAttack());
@@ -88,18 +88,37 @@ public class BossAttackState : BossBaseState
 
         Vector3 dir = boss.Player.transform.position - boss.transform.position;
         dir.y = 0;
+        float dist = dir.sqrMagnitude;
 
-        if (dir.sqrMagnitude <= 10f * 10f)
+        if (dist <= 20f * 20f)
         {
-            yield return ChargeAttack();
+            int rand = Random.Range(0, 2);
+            if (rand == 0)
+            {
+                boss._animator.SetTrigger("attack");
+                yield return RockAttack();
+            }
+            else
+            {
+                boss._animator.SetTrigger("attack");
+                yield return AOEAttack();
+            }
+                
         }
-        else if (dir.sqrMagnitude <= 15f * 15f && dir.sqrMagnitude > 10f *10f)
+        else if (dist <= 40f * 40f)
         {
-            yield return AOEAttack();
-        }
-        else if (dir.sqrMagnitude <= 20f * 20f && dir.sqrMagnitude > 15f *15f)
-        {
-            yield return Shoot();
+            int rand = Random.Range(0, 2);
+            if (rand == 0)
+            {
+                boss._animator.SetTrigger("attack");
+                yield return Shoot();
+            }
+            else
+            {
+                boss._animator.SetTrigger("attack");
+                yield return AOEAttack();
+            }
+                
         }
         else
         {
@@ -128,93 +147,70 @@ public class BossAttackState : BossBaseState
     // ==================================
     private IEnumerator AOEAttack()
     {
-        float distance = Vector3.Distance(
-            boss.transform.position,
-            boss.Player.transform.position
-        );
-
-        Vector3 targetPos = boss.Player.transform.position;
-
-        GameObject warning = GameObject.Instantiate(
-            boss.warningCirclePrefab,
-            targetPos,
-            Quaternion.identity
-        );
-
-        float warningTime = 1.5f;
-        float timer = 0f;
-
-        while (timer < warningTime)
-        {
-            warning.transform.localScale += new Vector3(2f * Time.deltaTime, 0f, 2f * Time.deltaTime);
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        GameObject aoe = GameObject.Instantiate(
-            boss.aoePrefab,
-            targetPos,
-            Quaternion.identity
-        );
-
-    }
-
-    // ==================================
-    // CHARGE + TELEGRAPH
-    // ==================================
-    private IEnumerator ChargeAttack()
-    {
-        float distance = Vector3.Distance(
-            boss.transform.position,
-            boss.Player.transform.position
-        );
-
-        if (distance > 10f)
-            yield break;
-
-        boss._animator.SetTrigger("charge_prepare");
+        
 
         yield return new WaitForSeconds(1f);
 
-        Vector3 direction =
-            (boss.Player.transform.position - boss.transform.position).normalized;
-
-        float chargeTime = 1.2f;
-        float chargeSpeed = boss.IsPhase2 ? 22f : 15f;
+        float duration = 3f;        // thời gian mưa đá
+        float spawnDelay = 0.2f;    // khoảng cách giữa mỗi viên
+        float radius = 8f;          // bán kính quanh boss
 
         float timer = 0f;
 
-        while (timer < chargeTime)
+        while (timer < duration)
         {
-            boss.transform.position += direction * chargeSpeed * Time.deltaTime;
-            timer += Time.deltaTime;
-            yield return null;
+            Vector3 randomPos = boss.Player.transform.position +
+                new Vector3(
+                    Random.Range(-radius, radius),
+                    0,
+                    Random.Range(-radius, radius)
+                );
+
+
+            GameObject rocks = GameObject.Instantiate(boss.aoePrefab, randomPos, Quaternion.identity);
+
+            yield return new WaitForSeconds(spawnDelay);
+            timer += spawnDelay;
         }
+    }
+
+    // ==================================
+    // Gaint Fireball
+    // ==================================
+    private IEnumerator RockAttack()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        if (boss.firePoint == null || boss.fireballPrefab == null) yield break;
+
+        Transform gunBarrel = boss.firePoint;
+
+        GameObject bullet = GameObject.Instantiate(
+            boss.rockprefab,
+            gunBarrel.position,
+            Quaternion.identity
+        );
+
+        Vector3 targetPos = boss.Player.transform.position;
+        targetPos.y = gunBarrel.position.y;
+
+        Vector3 shootDirection = (targetPos - gunBarrel.position).normalized;
+
+        Vector3 spreadDirection =
+            Quaternion.AngleAxis(0, Vector3.up) * shootDirection;
+
+        float bulletSpeed = boss.IsPhase2() ? 45f : 25f;
+
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = spreadDirection * bulletSpeed;
+        }        
     }
 
     // ==================================
     // FIREBALL
     // ==================================
-    private IEnumerator FireballAttack()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        GameObject fireball = GameObject.Instantiate(
-            boss.fireballPrefab,
-            boss.firePoint.position,
-            Quaternion.identity
-        );
-
-        Vector3 dir =
-            (boss.Player.transform.position - boss.firePoint.position).normalized;
-
-        Rigidbody rb = fireball.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            float speed = boss.IsPhase2 ? 35f : 25f;
-            rb.linearVelocity = dir * speed;
-        }
-    }
 
     private void RotateToPlayer()
     {
@@ -257,7 +253,7 @@ public class BossAttackState : BossBaseState
             Vector3 spreadDirection =
                 Quaternion.AngleAxis(i * spreadAngle, Vector3.up) * shootDirection;
 
-            float bulletSpeed = boss.IsPhase2 ? 45f : 25f;
+            float bulletSpeed = boss.IsPhase2() ? 45f : 25f;
 
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null)

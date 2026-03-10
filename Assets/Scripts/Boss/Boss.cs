@@ -5,8 +5,8 @@ using UnityEngine.AI;
 public class Boss : MonoBehaviour
 {
     public GameObject aoePrefab;
-    public GameObject warningCirclePrefab;
     public GameObject fireballPrefab;
+    public GameObject rockprefab;
     public Transform firePoint;
     [SerializeField] private LayerMask playerLayer;
 
@@ -15,11 +15,19 @@ public class Boss : MonoBehaviour
     public float currentPoise;
     public float currentHP;
 
-
     public float staggerDuration = 5f;
     private bool isStaggered;
 
-    public bool IsPhase2 => currentHP <= enemy_Infor.maxHP * 0.5f;
+    public bool IsPhase2()
+    {   
+        if(currentHP < enemy_Infor.maxHP / 2)
+        {
+            currentHP = enemy_Infor.maxHP;
+            return true;
+        }
+        else 
+            return false;       
+    }
 
 
     public Enemy_Infor enemy_Infor;
