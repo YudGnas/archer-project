@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class Player_Health : MonoBehaviour
 {
     [SerializeField] private Player_Infor Player_Infor;
+    [SerializeField] private shield playerShield;
+
 
     public Player_Infor _Infor => Player_Infor;
 
@@ -46,7 +48,7 @@ public class Player_Health : MonoBehaviour
             Energyrecovery(reconvertMana);
             timeReconvertMana = 0;
         }
-
+        
         Player_Infor._HP = Mathf.Clamp(Player_Infor._HP, 0, Player_Infor._maxHP);
         Player_Infor._Mana = Mathf.Clamp(Player_Infor._Mana, 0, Player_Infor._maxMana);
         UpdateHealthUI();
@@ -128,11 +130,17 @@ public class Player_Health : MonoBehaviour
             frontXPBar.fillAmount = Mathf.Lerp(fillF, backXPBar.fillAmount, percentComplete);
         }
     }
-
-    public void TakeDamege(float damege)
+    public void TakeDamege(float damage)
     {
         _Controller._animator.SetTrigger("GetHit");
-        Player_Infor._HP -= damege;
+
+        damage = playerShield.TakeShieldDamage(damage);
+
+        if (damage > 0)
+        {
+            Player_Infor._HP -= damage;
+        }
+
         leftTime = 0;
     }
 

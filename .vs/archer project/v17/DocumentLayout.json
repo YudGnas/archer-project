@@ -7,44 +7,48 @@
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\state\\bossattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\iceworld.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\iceworld.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\laze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\laze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\laze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\laze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\fallingice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\hack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\hack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\boss\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\player\\player_infor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_infor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\ui\\boss_ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\boss_ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\shield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\shield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\boss\\state\\bossstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\state\\bossstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\boss\\state\\bossstunstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boss\\state\\bossstunstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\enemy\\state\\stunstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\state\\stunstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\enemy\\state\\rangedattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\state\\rangedattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,8 +58,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Laze.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\Laze.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\Laze.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\Laze.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\Laze.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T17:54:24.772Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BossAttackState.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:52:33.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "shield.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\shield.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\shield.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\shield.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\shield.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwBEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:25:32.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Boss_UI.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Boss_UI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Boss_UI.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Boss_UI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Boss_UI.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwDIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:22:05.091Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:33766704:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
@@ -94,140 +151,107 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IceWorld.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\IceWorld.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\IceWorld.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\IceWorld.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\IceWorld.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:08:20.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Player_Infor.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Infor.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Infor.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Infor.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Infor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T17:57:38.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Hack.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\Hack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\Hack.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\Hack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\Hack.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T17:54:24.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "fallingice.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\fallingice.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\fallingice.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\fallingice.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Skill\\fallingice.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\fallingice.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\fallingice.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\fallingice.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\fallingice.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T16:50:57.078Z",
+              "WhenOpened": "2026-03-13T17:54:23.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SkillBase.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\SkillBase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\SkillBase.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\SkillBase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Skill\\SkillBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 11,
+              "Title": "Player_Health.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Health.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Health.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Health.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Health.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAcwGYAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T16:47:09.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Laze.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Laze.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Laze.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Laze.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Skill\\Laze.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T16:37:51.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BossAttackState.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Boss\\State\\BossAttackState.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowLwAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T11:25:08.542Z",
+              "WhenOpened": "2026-03-11T12:28:19.997Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Boss.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\Boss.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Boss\\Boss.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\Boss.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Boss\\Boss.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwBEAAAAmAAAA",
+              "Title": "SkillBase.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T11:20:02.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BossStateMachine.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossStateMachine.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Boss\\State\\BossStateMachine.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossStateMachine.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Boss\\State\\BossStateMachine.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T09:37:43.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BossStunState.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossStunState.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Boss\\State\\BossStunState.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Boss\\State\\BossStunState.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Boss\\State\\BossStunState.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T17:23:51.878Z"
+              "WhenOpened": "2026-03-11T12:26:33.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "RangedAttackState.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\State\\RangedAttackState.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\State\\RangedAttackState.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\State\\RangedAttackState.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy\\State\\RangedAttackState.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T17:17:13.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "StunState.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\State\\StunState.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\State\\StunState.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\State\\StunState.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy\\State\\StunState.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T17:15:20.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Player_Fire.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Fire.cs",
               "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Fire.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAcwJUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG0AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-02T14:10:55.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Player_Controller.cs",
               "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Controller.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Controller.cs",
               "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Controller.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Controller.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAIwDoAAAAGAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T09:24:21.616Z"
+              "WhenOpened": "2026-03-09T09:24:21.616Z",
+              "EditorCaption": ""
             }
           ]
         }

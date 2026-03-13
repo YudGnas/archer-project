@@ -24633,11 +24633,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceWorld
   Player_Fire: {fileID: 0}
-  damage: 200
-  poiseDamage: 70
-  cooldown: 1
-  ManaCost: 1
-  speed: 0
+  _player_infor: {fileID: 0}
+  infor: {fileID: 11400000, guid: 535a5df42564e79468d1de5a50503c4e, type: 2}
+  trueDamege: 0
 --- !u!135 &8147117579019570226
 SphereCollider:
   m_ObjectHideFlags: 0

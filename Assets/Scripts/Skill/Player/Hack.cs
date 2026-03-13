@@ -1,26 +1,29 @@
-using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class fallingice : SkillBase
+public class Hack : SkillBase
 {
-    
     void Start()
-    {   
-        
-        Invoke("DestroyBullet", 2);
+    {
+        trueDamege = infor.damege + _player._player_Infor._Attack;
+    }
+    void Update()
+    {
+        Invoke("DestroyBullet", 10);
     }
 
     public override void Shoot(GameObject skillbullet, Transform firepoint)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, transform.position);
+      
+        GameObject bullet = Instantiate(
+            skillbullet,
+            firepoint.position,
+            firepoint.rotation
+        );
 
-        if (groundPlane.Raycast(ray, out float distance))
-        {
-            Vector3 spawnPosition = ray.GetPoint(distance);
-
-            GameObject aoe = Instantiate(skillbullet, spawnPosition + new Vector3(0, 0.3f, 0), Quaternion.identity);
-        }
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.linearVelocity = firepoint.forward * infor.speed;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,7 +33,7 @@ public class fallingice : SkillBase
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null && !enemyList.Contains(enemy))
             {
-                enemy.TakeDamege(damage);
+                enemy.TakeDamege(infor.damege);
                 enemyList.Add(enemy);
             }
             Destroy(gameObject, 2f);
@@ -40,7 +43,7 @@ public class fallingice : SkillBase
             Boss boss = other.GetComponent<Boss>();
             if (boss != null && !BossList.Contains(boss))
             {
-                boss.TakeDamage(damage, poiseDamage);
+                boss.TakeDamage(infor.damege, infor.poiseDamage);
                 BossList.Add(boss);
             }
             Destroy(gameObject, 2f);

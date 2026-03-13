@@ -127,11 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hack
   Player_Fire: {fileID: 0}
-  damage: 100
-  poiseDamage: 50
-  cooldown: 15
-  ManaCost: 70
-  speed: 20
+  _player_infor: {fileID: 0}
+  infor: {fileID: 11400000, guid: 8466f786f9983fc4cacee2c5d7e0d2c1, type: 2}
+  trueDamege: 0
 --- !u!54 &-7127899269652422835
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
 
+
+public enum PlayerState
+{
+    stun,
+    move,
+    attack,
+    idel
+}
 public class Player_Controller : MonoBehaviour
 {
     [SerializeField] private Player_Infor Player_Infor;
     [SerializeField] private Player_Fire Player_Fire;
+    public PlayerState _state;
 
     public Player_Infor _player_Infor => Player_Infor;
     public Player_Fire _player_Fire => Player_Fire;
@@ -20,6 +29,7 @@ public class Player_Controller : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<CharacterController>();
+        _state = PlayerState.idel;
     }
 
     void Update()
@@ -45,7 +55,7 @@ public class Player_Controller : MonoBehaviour
         Vector3 move = (camForward * playermovey + camRight * playermovex).normalized;
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? Player_Infor._Speedrun : Player_Infor._Speedwalk; 
-        if (move != Vector3.zero)
+        if (move != Vector3.zero && _state == PlayerState.idel)
         { 
             // Di chuyển
             _controller.Move(move * speed * Time.deltaTime); 

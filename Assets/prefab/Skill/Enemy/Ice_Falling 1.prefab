@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 65028864502264817}
   - component: {fileID: 898194650171974260}
   - component: {fileID: -2367992370591180965}
-  - component: {fileID: -1778636770921546212}
+  - component: {fileID: -7832710105957543187}
   m_Layer: 0
-  m_Name: Ice_Falling
-  m_TagString: Untagged
+  m_Name: Ice_Falling 1
+  m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +143,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1778636770921546212
+--- !u!114 &-7832710105957543187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,15 +152,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1206613561520985815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74893a55f341eb640a26cc75f783b577, type: 3}
+  m_Script: {fileID: 11500000, guid: 8104ba5d3deaaea4da1bfa583ffc5ee6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::fallingice
-  Player_Fire: {fileID: 0}
-  damage: 50
-  poiseDamage: 20
-  cooldown: 5
-  ManaCost: 30
-  speed: 0
+  m_EditorClassIdentifier: Assembly-CSharp::falling
+  damege: 10
 --- !u!1001 &111537702459928658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,18 +227,54 @@ PrefabInstance:
     - target: {fileID: 2220319803246276148, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7360da3da75ab014298519d5f0f943c8, type: 2}
+      objectReference: {fileID: 2100000, guid: a61ea4f971940c1409c88001f4af9b18, type: 2}
     - target: {fileID: 2357307127349287299, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357307127349287299, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.0033374857
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357307127349287299, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.025240008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357307127349287299, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.14150941
       objectReference: {fileID: 0}
     - target: {fileID: 3113639350540441454, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3113639350540441454, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.062745094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113639350540441454, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.1399593
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113639350540441454, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3593489370696155772, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593489370696155772, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.01886791
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593489370696155772, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.011768394
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593489370696155772, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.009700954
       objectReference: {fileID: 0}
     - target: {fileID: 4761858960152293857, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: looping
@@ -273,6 +304,10 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6166423067692165527, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6500597359330413777, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: looping
       value: 0
@@ -281,9 +316,33 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7947629378787554936, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.024430392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947629378787554936, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.029617146
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947629378787554936, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5754717
+      objectReference: {fileID: 0}
     - target: {fileID: 8754973183424320083, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754973183424320083, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754973183424320083, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.07366451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754973183424320083, guid: b1ae5055f08b8284d9e996465d1d37e3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

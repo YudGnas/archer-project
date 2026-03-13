@@ -2,11 +2,13 @@
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.InputSystem.XR;
 public class Player_Fire : MonoBehaviour
 {
     [SerializeField] private Player_Controller controller;
     [SerializeField] private Player_Health player_Health;
     [SerializeField] private Player_Infor player_Infor;
+    [SerializeField] private shield _shield;
 
     [SerializeField] public Player_Controller _Controller => controller;
 
@@ -37,12 +39,14 @@ public class Player_Fire : MonoBehaviour
     public Image CooldownQ;
     public Image CooldownE;
     public Image CooldownR;
+    public Image CooldownShield;
     public TextMeshProUGUI cooldownQText;
     public TextMeshProUGUI cooldownEText;
     public TextMeshProUGUI cooldownRText;
     private float timeQ;
     private float timeE;
     private float timeR;
+    private float time_Shield;
     
 
 
@@ -60,40 +64,51 @@ public class Player_Fire : MonoBehaviour
     void Update()
     {   
         _timebetweefire -= Time.deltaTime;
-        timeQ -= Time.deltaTime; timeQ = Mathf.Clamp(timeQ, 0f, SkillQ.cooldown);
-        timeE -= Time.deltaTime; timeE = Mathf.Clamp(timeE, 0f, SkillE.cooldown);
-        timeR -= Time.deltaTime; timeR = Mathf.Clamp(timeR, 0f, SkillR.cooldown);
+        timeQ -= Time.deltaTime; timeQ = Mathf.Clamp(timeQ, 0f, SkillQ.infor.cooldown);
+        timeE -= Time.deltaTime; timeE = Mathf.Clamp(timeE, 0f, SkillE.infor.cooldown);
+        timeR -= Time.deltaTime; timeR = Mathf.Clamp(timeR, 0f, SkillR.infor.cooldown);
+        time_Shield -= Time.deltaTime; time_Shield = Mathf.Clamp(time_Shield, 0f, _shield.cooldown);
         UpdateSkillUI(CooldownQ, SkillQ, timeQ);
         UpdateSkillUI(CooldownE, SkillE, timeE);
-        UpdateSkillUI(CooldownR, SkillR, timeR);        
+        UpdateSkillUI(CooldownR, SkillR, timeR);
+        UpdateShieldUI();
         if (Input.GetKeyDown(KeyCode.F) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
         {   
             Player_Rotation();           
             Attack("attack");
             StartCoroutine(ShootDelay(0.5f, bulletPrefab));
+            controller._state = PlayerState.idel;
 
         }
-        if (Input.GetKeyDown(KeyCode.E) && player_Infor._Mana >= SkillE.ManaCost && timeE <= 0) 
+        if (Input.GetKeyDown(KeyCode.E) && player_Infor._Mana >= SkillE.infor.manacost && timeE <= 0) 
         {        
             Player_Rotation();
             Attack("SkillE");
-            timeE = SkillE.cooldown;
+            timeE = SkillE.infor.cooldown;
+            controller._state = PlayerState.idel;
         }
-        if(Input.GetKeyDown(KeyCode.Q) && timeQ <= 0 && player_Infor._Mana >= SkillQ.ManaCost)
+        if(Input.GetKeyDown(KeyCode.Q) && timeQ <= 0 && player_Infor._Mana >= SkillQ.infor.manacost)
         {
-            timeQ = SkillQ.cooldown;
+            timeQ = SkillQ.infor.cooldown;
             Player_Rotation();
             Attack("SkillQ");
             SkillQ.Shoot(SkillQPrefab, firePoint);
-            player_Health.Energyconsumption(SkillQ.ManaCost);
+            player_Health.Energyconsumption(SkillQ.infor.manacost);
+            controller._state = PlayerState.idel;
         }        
-        if(Input.GetKeyDown(KeyCode.R) && timeR <= 0 && player_Infor._Mana >= SkillR.ManaCost)
+        if(Input.GetKeyDown(KeyCode.R) && timeR <= 0 && player_Infor._Mana >= SkillR.infor.manacost)
         {
-            timeR = SkillR.cooldown;
+            timeR = SkillR.infor.cooldown;
             Player_Rotation();
             Attack("SkillQ");
             SkillR.Shoot(SkillRPrefab, firePoint2);
-            player_Health.Energyconsumption(SkillR.ManaCost);
+            player_Health.Energyconsumption(SkillR.infor.manacost);
+            controller._state = PlayerState.idel;
+        }
+        if(Input.GetMouseButtonDown(1))
+        {
+            time_Shield = _shield.cooldown;
+            _shield.UsingShield();
         }
     }
 
@@ -136,7 +151,7 @@ public class Player_Fire : MonoBehaviour
     private void Attack(string skillname)
     {
         //isAttacking = true;
-
+        controller._state = PlayerState.attack;
         // Dừng di chuyển khi đánh (nếu muốn)
         controller._controller.Move(Vector3.zero);
 
@@ -146,7 +161,7 @@ public class Player_Fire : MonoBehaviour
     }
     public void CastAOE()
     {          
-        player_Health.Energyconsumption(SkillE.ManaCost);
+        player_Health.Energyconsumption(SkillE.infor.manacost);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, transform.position);
 
@@ -159,8 +174,13 @@ public class Player_Fire : MonoBehaviour
     }
     public void UpdateSkillUI(Image skillimg, SkillBase skill, float cooldown)
     {
-        float percent = cooldown / skill.cooldown;
+        float percent = cooldown / skill.infor.cooldown;
         skillimg.fillAmount = Mathf.Lerp(skillimg.fillAmount, percent, 10f*Time.deltaTime);
+    }    
+    public void UpdateShieldUI()
+    {
+        float percent = time_Shield / _shield.cooldown;
+        CooldownShield.fillAmount = Mathf.Lerp(CooldownShield.fillAmount, percent, 10f*Time.deltaTime);
     }
 
     IEnumerator ShootDelay(float delay, GameObject bulletpre)

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7112008252900019172}
   m_Layer: 0
   m_Name: giantfireball
-  m_TagString: Untagged
+  m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8fa270180c4826042aaae06bdf300385, type: 2}
+  - {fileID: 2100000, guid: 1f2b66fb9eb590b438c6e1a959e0ac0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -218,7 +218,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8342886888352328873, guid: eccbc655050af0b4f81d8db39f84a58e, type: 3}
+    - {fileID: 690304760250987042, guid: eccbc655050af0b4f81d8db39f84a58e, type: 3}
+    - {fileID: 2670683172082904932, guid: eccbc655050af0b4f81d8db39f84a58e, type: 3}
+    - {fileID: 2090636658055693079, guid: eccbc655050af0b4f81d8db39f84a58e, type: 3}
+    - {fileID: 3263346866027687831, guid: eccbc655050af0b4f81d8db39f84a58e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbc655050af0b4f81d8db39f84a58e, type: 3}

@@ -1,32 +1,26 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Hack : SkillBase
+public class IceWorld : SkillBase
 {
-
-    
-
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        Invoke("DestroyBullet", 10);
+        trueDamege = infor.damege + _player._player_Infor._Attack * 2;
     }
 
+    void Update()
+    {
+        Invoke("DestroyBullet", 1f);
+    }
     public override void Shoot(GameObject skillbullet, Transform firepoint)
     {
-      
+
         GameObject bullet = Instantiate(
             skillbullet,
             firepoint.position,
             firepoint.rotation
         );
-
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.linearVelocity = firepoint.forward * speed;
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -34,7 +28,8 @@ public class Hack : SkillBase
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null && !enemyList.Contains(enemy))
             {
-                enemy.TakeDamege(damage);
+                enemy.TakeDamege(infor.damege);
+                enemy.stateMachine.ChangeState(new StunState());
                 enemyList.Add(enemy);
             }
             Destroy(gameObject, 2f);
@@ -44,7 +39,7 @@ public class Hack : SkillBase
             Boss boss = other.GetComponent<Boss>();
             if (boss != null && !BossList.Contains(boss))
             {
-                boss.TakeDamage(damage, poiseDamage);
+                boss.TakeDamage(infor.damege, infor.poiseDamage);
                 BossList.Add(boss);
             }
             Destroy(gameObject, 2f);

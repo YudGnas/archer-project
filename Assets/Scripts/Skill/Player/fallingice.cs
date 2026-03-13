@@ -1,22 +1,28 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class IceWorld : SkillBase
+public class fallingice : SkillBase
 {
-
-    void Update()
+    
+    void Start()
     {
-        Invoke("DestroyBullet", 1f);
+        trueDamege = infor.damege + _player._player_Infor._Attack * 1.5f;
+        Invoke("DestroyBullet", 2);
     }
+
     public override void Shoot(GameObject skillbullet, Transform firepoint)
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, transform.position);
 
-        GameObject bullet = Instantiate(
-            skillbullet,
-            firepoint.position,
-            firepoint.rotation
-        );
+        if (groundPlane.Raycast(ray, out float distance))
+        {
+            Vector3 spawnPosition = ray.GetPoint(distance);
+
+            GameObject aoe = Instantiate(skillbullet, spawnPosition + new Vector3(0, 0.3f, 0), Quaternion.identity);
+        }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -24,8 +30,7 @@ public class IceWorld : SkillBase
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null && !enemyList.Contains(enemy))
             {
-                enemy.TakeDamege(damage);
-                enemy.stateMachine.ChangeState(new StunState());
+                enemy.TakeDamege(infor.damege);
                 enemyList.Add(enemy);
             }
             Destroy(gameObject, 2f);
@@ -35,7 +40,7 @@ public class IceWorld : SkillBase
             Boss boss = other.GetComponent<Boss>();
             if (boss != null && !BossList.Contains(boss))
             {
-                boss.TakeDamage(damage, poiseDamage);
+                boss.TakeDamage(infor.damege, infor.poiseDamage);
                 BossList.Add(boss);
             }
             Destroy(gameObject, 2f);
