@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
-    [SerializeField] private Player_Infor Player_Infor;
+    [SerializeField] private Player_Infor player_Infor;
     [SerializeField] private shield playerShield;
 
 
-    public Player_Infor _Infor => Player_Infor;
+    public Player_Infor _Infor => player_Infor;
 
     private Player_Controller _Controller;
     public float chipSpeed = 2f;
@@ -20,6 +20,12 @@ public class Player_Health : MonoBehaviour
     public Image frontManaBar;
     public Image frontXPBar;
     public Image backXPBar;
+    public Image healing;
+
+    public float timeH;
+    private float cooldown = 4f;
+    public ParticleSystem effect;
+
 
     public Text hp;
     //public Text Mana;
@@ -32,40 +38,46 @@ public class Player_Health : MonoBehaviour
     Color frontMana = new Color(25f, 229f, 229f);
     Color backMana = new Color(196f, 226f, 223f);
 
+
+
     void Start()
     {
         _Controller = GetComponent<Player_Controller>();
-        Player_Infor._HP = Player_Infor._maxHP;
-        Player_Infor._Mana = Player_Infor._maxMana;
+        player_Infor._HP = player_Infor._maxHP;
+        player_Infor._Mana = player_Infor._maxMana;
     }
 
     // Update is called once per frame
     void Update()
     {
         timeReconvertMana += Time.deltaTime;
+        timeH -= Time.deltaTime;    
         if (timeReconvertMana > 1)
         {
             Energyrecovery(reconvertMana);
             timeReconvertMana = 0;
         }
         
-        Player_Infor._HP = Mathf.Clamp(Player_Infor._HP, 0, Player_Infor._maxHP);
-        Player_Infor._Mana = Mathf.Clamp(Player_Infor._Mana, 0, Player_Infor._maxMana);
+        player_Infor._HP = Mathf.Clamp(player_Infor._HP, 0, player_Infor._maxHP);
+        player_Infor._Mana = Mathf.Clamp(player_Infor._Mana, 0, player_Infor._maxMana);
         UpdateHealthUI();
         UpdateManaUI();
         UpdateXPUI();
+        UpdateHealingUI();
+        if(Input.GetKeyDown(KeyCode.Alpha1) && timeH <= 0)
+        {
+            Healing(player_Infor._maxHP * 3 / 10);
+            Invoke("Turnoffeffect", 1.5f);
+        }
     }
 
 
     public void UpdateHealthUI()
     {
-        hp.text = Player_Infor._HP + "/" + Player_Infor._maxHP;
+        hp.text = player_Infor._HP + "/" + player_Infor._maxHP;
         float fillF = frontHealthBar.fillAmount;
         float fillB = backHealthBar.fillAmount;
-        float hFration = Player_Infor._HP / Player_Infor._maxHP;
-
-
-
+        float hFration = player_Infor._HP / player_Infor._maxHP;
         if (fillB > hFration)
         {
             frontHealthBar.fillAmount = hFration;
@@ -92,7 +104,7 @@ public class Player_Health : MonoBehaviour
         //Mana.text = Player_Infor._Mana + "/" + Player_Infor._maxMana;
         float fillF = frontManaBar.fillAmount;
         float fillB = backManaBar.fillAmount;
-        float hFration = Player_Infor._Mana / Player_Infor._maxMana;
+        float hFration = player_Infor._Mana / player_Infor._maxMana;
 
         if (fillB > hFration)
         {
@@ -118,7 +130,7 @@ public class Player_Health : MonoBehaviour
         //Mana.text = Player_Infor._Mana + "/" + Player_Infor._maxMana;
         float fillF = frontXPBar.fillAmount;
         float fillB = backXPBar.fillAmount;
-        float hFration = Player_Infor._Exp / Player_Infor._maxExp;
+        float hFration = player_Infor._Exp / player_Infor._maxExp;
 
         if (fillB < hFration)
         {
@@ -132,13 +144,13 @@ public class Player_Health : MonoBehaviour
     }
     public void TakeDamege(float damage)
     {
-        _Controller._animator.SetTrigger("GetHit");
-
+       
         damage = playerShield.TakeShieldDamage(damage);
 
         if (damage > 0)
         {
-            Player_Infor._HP -= damage;
+            player_Infor._HP -= damage;
+            _Controller._animator.SetTrigger("GetHit");
         }
 
         leftTime = 0;
@@ -147,36 +159,46 @@ public class Player_Health : MonoBehaviour
 
     public void Healing(float heal)
     {
-        Player_Infor._HP += heal;
+        effect.Play();
+        timeH = cooldown;
+        player_Infor._HP += heal;
         leftTime = 0;
     }
 
     public void Energyconsumption(float energy)
     {
-        Player_Infor._Mana -= energy;
+        player_Infor._Mana -= energy;
         leftTime = 0;
     }
     public void Energyrecovery(float energy)
     {
-        Player_Infor._Mana += energy; 
+        player_Infor._Mana += energy; 
         leftTime = 0;
     }
 
     public void GetXp(float xp)
     {
-        Player_Infor._Exp += xp;
+        player_Infor._Exp += xp;
         leftTime = 0;
 
-        if(Player_Infor._Exp >= Player_Infor._maxExp)
+        if(player_Infor._Exp >= player_Infor._maxExp)
         {
             Debug.Log("Level Up!!!");
-            Player_Infor._Exp = 0;
+            player_Infor._Exp = 0;
             frontXPBar.fillAmount = 0;
-            Player_Infor._level += 1;
-            Player_Infor._skillpoints += 1;
-            Player_Infor._attributepoints += 3;           
-            Player_Infor._maxExp += 50*Player_Infor._level;
+            player_Infor._level += 1;
+            player_Infor._skillpoints += 1;
+            player_Infor._attributepoints += 3;           
+            player_Infor._maxExp += 50*player_Infor._level;
         }
     }
-
+    public void UpdateHealingUI()
+    {
+        float percent = timeH / cooldown;
+        healing.fillAmount = Mathf.Lerp(healing.fillAmount, percent, 10f * Time.deltaTime);
+    }
+    void Turnoffeffect()
+    {
+        effect.Stop();
+    }
 }

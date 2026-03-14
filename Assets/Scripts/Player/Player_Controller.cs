@@ -19,7 +19,7 @@ public class Player_Controller : MonoBehaviour
 
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private float gravity = -9.81f;
-
+    [SerializeField] private float jumpForce = 5f;
     [SerializeField] public Animator _animator;
 
     public CharacterController _controller;
@@ -35,6 +35,7 @@ public class Player_Controller : MonoBehaviour
     void Update()
     {
         Move();
+        Jump();
         ApplyGravity();
     }
 
@@ -75,5 +76,15 @@ public class Player_Controller : MonoBehaviour
         }
         velocity.y += gravity * Time.deltaTime;
         _controller.Move(velocity * Time.deltaTime);
+    }
+
+
+    void Jump()
+    {
+        if (_controller.isGrounded && Input.GetKey(KeyCode.Space))
+        {
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            _animator.SetTrigger("Jump");
+        }
     }
 }

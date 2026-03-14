@@ -128,10 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fb636fca41c75489fe20e32f6da3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Laze
-  Player_Fire: {fileID: 0}
-  _player_infor: {fileID: 0}
+  Player_Fire: {fileID: 6689293554398803747, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
+  _player: {fileID: 7141482702132137852, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
   infor: {fileID: 11400000, guid: 796936c7dbb01034ea1775f93c8d005c, type: 2}
-  trueDamege: 0
   isUsing: 0
 --- !u!54 &3716603030773388472
 Rigidbody:

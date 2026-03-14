@@ -7,7 +7,7 @@ public class Laze : SkillBase
     private float _time = 0.5f;
     void Start()
     {
-        trueDamege = infor.damege + _player._player_Infor._Attack * 6 / 10;
+        
     }
 
     // Update is called once per frame
@@ -32,28 +32,5 @@ public class Laze : SkillBase
             firepoint.position,
             firepoint.rotation
         );
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null && !enemyList.Contains(enemy))
-            {
-                enemy.TakeDamege(infor.damege);
-                enemyList.Add(enemy);
-            }
-            Destroy(gameObject, 2f);
-        }
-        if (other.CompareTag("Boss"))
-        {
-            Boss boss = other.GetComponent<Boss>();
-            if (boss != null && !BossList.Contains(boss))
-            {
-                boss.TakeDamage(infor.damege, infor.poiseDamage);
-                BossList.Add(boss);
-            }
-            Destroy(gameObject, 2f);
-        }
     }
 }

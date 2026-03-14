@@ -105,7 +105,7 @@ public class Player_Fire : MonoBehaviour
             player_Health.Energyconsumption(SkillR.infor.manacost);
             controller._state = PlayerState.idel;
         }
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             time_Shield = _shield.cooldown;
             _shield.UsingShield();

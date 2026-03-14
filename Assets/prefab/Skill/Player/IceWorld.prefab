@@ -24632,10 +24632,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7012b4e7778227c4fa8d36c7c319ec98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceWorld
-  Player_Fire: {fileID: 0}
-  _player_infor: {fileID: 0}
+  Player_Fire: {fileID: 6689293554398803747, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
+  _player: {fileID: 7141482702132137852, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
   infor: {fileID: 11400000, guid: 535a5df42564e79468d1de5a50503c4e, type: 2}
-  trueDamege: 0
 --- !u!135 &8147117579019570226
 SphereCollider:
   m_ObjectHideFlags: 0

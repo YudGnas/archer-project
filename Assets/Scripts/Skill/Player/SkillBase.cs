@@ -9,7 +9,7 @@ public class SkillBase : MonoBehaviour
     
     protected List<Enemy> enemyList = new List<Enemy>();
     protected List<Boss> BossList = new List<Boss>();
-    public float trueDamege;
+    protected float trueDamege => infor.damege + _player._player_Infor._Attack;
 
 
     void DestroyBullet()
@@ -22,13 +22,33 @@ public class SkillBase : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Player_Fire = player.GetComponent<Player_Fire>();
-        _player = player.GetComponent<Player_Controller>();
     }
 
     public virtual void Shoot(GameObject skillbullet, Transform firepoint)
     {
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null && !enemyList.Contains(enemy))
+            {
+                enemy.TakeDamege(trueDamege);
+                enemyList.Add(enemy);
+            }
+            Destroy(gameObject, 2f);
+        }
+        if (other.CompareTag("Boss"))
+        {
+            Boss boss = other.GetComponent<Boss>();
+            if (boss != null && !BossList.Contains(boss))
+            {
+                boss.TakeDamage(trueDamege, infor.poiseDamage);
+                BossList.Add(boss);
+            }
+            Destroy(gameObject, 2f);
+        }
     }
 }

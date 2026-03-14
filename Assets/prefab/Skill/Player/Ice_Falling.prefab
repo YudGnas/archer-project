@@ -155,10 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74893a55f341eb640a26cc75f783b577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fallingice
-  Player_Fire: {fileID: 0}
-  _player_infor: {fileID: 0}
+  Player_Fire: {fileID: 6689293554398803747, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
+  _player: {fileID: 7141482702132137852, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
   infor: {fileID: 11400000, guid: 4206f91bfd1e87b46a44aaa562aefb8b, type: 2}
-  trueDamege: 0
 --- !u!1001 &111537702459928658
 PrefabInstance:
   m_ObjectHideFlags: 0

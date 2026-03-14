@@ -33,7 +33,7 @@ public class Fireball : MonoBehaviour
             {
                 player.TakeDamege(damage);
             }
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
         /*if (other.CompareTag("Enemy"))
         {
