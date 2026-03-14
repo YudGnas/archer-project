@@ -20,7 +20,7 @@ public class Fireball : MonoBehaviour
     void Start()
     {
         speed = rb.linearVelocity.magnitude; // lưu lại tốc độ ban đầu
-        Invoke("DestroyBullet", 10);
+        Invoke("DestroyBullet", 5);
     }
 
 

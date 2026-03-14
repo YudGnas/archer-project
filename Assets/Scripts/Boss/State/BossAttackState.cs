@@ -16,6 +16,11 @@ public class BossAttackState : BossBaseState
 
     [SerializeField] private float loseDuration = 5f;
 
+    [SerializeField] private float circleDistance = 30f;
+    [SerializeField] private float circleSpeed = 2f;
+    private float circleAngle;
+
+
     public override void Enter()
     {
         losePlayerTime = 0f;
@@ -23,6 +28,8 @@ public class BossAttackState : BossBaseState
         isAttacking = false;
 
         boss.Agent.isStopped = true;
+        boss.Agent.updateRotation = false;
+        boss.Agent.angularSpeed = 0;
         if (boss.IsPhase2())
         {
             boss.Agent.speed = 6f;
@@ -47,7 +54,6 @@ public class BossAttackState : BossBaseState
 
         float cooldown = boss.IsPhase2() ? phase2Cooldown : phase1Cooldown;
 
-
         if (boss.CanSeePlayer())
         {
             losePlayerTime = 0f;
@@ -56,12 +62,19 @@ public class BossAttackState : BossBaseState
 
             if (attackTimer >= cooldown)
             {
+                boss.Agent.isStopped = true;
+
                 attackTimer = 0f;
 
                 if (boss.IsPhase2())
                     boss.StartCoroutine(ComboAttack());
                 else
                     boss.StartCoroutine(SmartAttack());
+            }
+            else
+            {
+                MoveAroundPlayer();
+                RotateToPlayer();
             }
 
             boss.LastKnowPos = boss.Player.transform.position;
@@ -75,7 +88,6 @@ public class BossAttackState : BossBaseState
                 _stateMachine.ChangeState(new BossSearchState());
             }
         }
-
     }
 
     // ==================================
@@ -95,12 +107,12 @@ public class BossAttackState : BossBaseState
             if (rand == 0)
             {
                 boss._animator.SetTrigger("attack");
-                yield return boss.RockAttack();
+                yield return boss.Skill1();
             }
             else
             {
                 boss._animator.SetTrigger("attack");
-                yield return boss.AOEAttack();
+                yield return boss.Skill2();
             }
                 
         }
@@ -110,12 +122,12 @@ public class BossAttackState : BossBaseState
             if (rand == 0)
             {
                 boss._animator.SetTrigger("attack");
-                yield return boss.Shoot();
+                yield return boss.Skill2();
             }
             else
             {
                 boss._animator.SetTrigger("attack");
-                yield return boss.AOEAttack();
+                yield return boss.Skill3();
             }
                 
         }
@@ -162,5 +174,19 @@ public class BossAttackState : BossBaseState
         );
     }
 
+    private void MoveAroundPlayer()
+    {
+        circleAngle += circleSpeed * Time.deltaTime;
 
+        Vector3 offset = new Vector3(
+            Mathf.Cos(circleAngle),
+            0,
+            Mathf.Sin(circleAngle)
+        ) * circleDistance;
+
+        Vector3 targetPos = boss.Player.transform.position + offset;
+
+        boss.Agent.isStopped = false;
+        boss.Agent.SetDestination(targetPos);
+    }
 }
