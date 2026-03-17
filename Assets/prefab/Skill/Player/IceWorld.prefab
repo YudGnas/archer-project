@@ -24634,7 +24634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IceWorld
   Player_Fire: {fileID: 6689293554398803747, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
   _player: {fileID: 7141482702132137852, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
-  infor: {fileID: 11400000, guid: 535a5df42564e79468d1de5a50503c4e, type: 2}
+  infor: {fileID: 11400000, guid: a63ce55eb040fa64484044682a913c3d, type: 2}
 --- !u!135 &8147117579019570226
 SphereCollider:
   m_ObjectHideFlags: 0

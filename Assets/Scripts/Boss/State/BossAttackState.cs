@@ -101,35 +101,27 @@ public class BossAttackState : BossBaseState
         dir.y = 0;
         float dist = dir.sqrMagnitude;
 
-        if (dist <= 20f * 20f)
+        if (dist <= 40f * 40f) // trong tầm đánh
         {
-            int rand = Random.Range(0, 2);
-            if (rand == 0)
+            int rand = Random.Range(0, 4); // 3 skill
+
+            boss._animator.SetTrigger("attack");
+
+            switch (rand)
             {
-                boss._animator.SetTrigger("attack");
-                yield return boss.Skill1();
+                case 0:
+                    yield return boss.Skill1();
+                    break;
+                case 1:
+                    yield return boss.Skill2();
+                    break;
+                case 2:
+                    yield return boss.Skill3();
+                    break;
+                case 3: 
+                    yield return boss.Skill4();
+                    break;
             }
-            else
-            {
-                boss._animator.SetTrigger("attack");
-                yield return boss.Skill2();
-            }
-                
-        }
-        else if (dist <= 40f * 40f)
-        {
-            int rand = Random.Range(0, 2);
-            if (rand == 0)
-            {
-                boss._animator.SetTrigger("attack");
-                yield return boss.Skill2();
-            }
-            else
-            {
-                boss._animator.SetTrigger("attack");
-                yield return boss.Skill3();
-            }
-                
         }
         else
         {

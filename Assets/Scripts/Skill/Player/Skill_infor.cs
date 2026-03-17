@@ -10,4 +10,5 @@ public class Skill_infor : ScriptableObject
     public float manacost;
     public float poiseDamage;
     public float speed;
+    public int Level;
 }

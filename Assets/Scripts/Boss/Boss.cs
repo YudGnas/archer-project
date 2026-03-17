@@ -4,10 +4,15 @@ using UnityEngine.AI;
 
 public class Boss : MonoBehaviour
 {
-    public GameObject aoePrefab;
-    public GameObject fireballPrefab;
-    public GameObject rockprefab;
+    public GameObject skill1Prefab;
+    public GameObject skill2Prefab;
+    public GameObject skill3prefab;
+    public GameObject skill4Prefab;
     public Transform firePoint;
+
+    [SerializeField] protected Transform[] firePoints; // 3 cổng phía sau
+
+
     [SerializeField] private LayerMask playerLayer;
 
 
@@ -21,15 +26,18 @@ public class Boss : MonoBehaviour
     [SerializeField] protected int bulletCount => IsPhase2() ? 60 : 20;
     [SerializeField] protected float spreadAngle = 5f;
 
+    private bool hasEnteredPhase2 = false;
+
     public bool IsPhase2()
-    {   
-        if(currentHP < enemy_Infor.maxHP / 2)
+    {
+        if (!hasEnteredPhase2 && currentHP < enemy_Infor.maxHP / 2)
         {
+            hasEnteredPhase2 = true;
             currentHP = enemy_Infor.maxHP;
             return true;
         }
-        else 
-            return false;       
+
+        return false;
     }
 
 
@@ -158,6 +166,10 @@ public class Boss : MonoBehaviour
         yield break;
     }    
     public virtual IEnumerator Skill3() 
+    {
+        yield break;
+    }
+    public virtual IEnumerator Skill4() 
     {
         yield break;
     }

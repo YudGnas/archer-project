@@ -1,13 +1,14 @@
 ﻿using System.Collections;
+using System.Reflection;
 using UnityEngine;
 
 public class PurpleWitch : Boss
 {
-    public override IEnumerator Skill2()
+    public override IEnumerator Skill2() // mưa đạn
     {
         yield return new WaitForSeconds(0.5f);
 
-        if (firePoint == null || fireballPrefab == null) yield break;
+        if (firePoint == null || skill2Prefab == null) yield break;
 
         Transform gunBarrel = firePoint;
 
@@ -16,7 +17,7 @@ public class PurpleWitch : Boss
         for (int i = -half; i <= half; i++)
         {
             GameObject bullet = GameObject.Instantiate(
-                fireballPrefab,
+                skill2Prefab,
                 gunBarrel.position,
                 Quaternion.identity
             );
@@ -38,16 +39,16 @@ public class PurpleWitch : Boss
             }
         }
     }
-    public override IEnumerator Skill1()
+    public override IEnumerator Skill1() // Cầu lửa khổng lồ
     {
         yield return new WaitForSeconds(0.5f);
 
-        if (firePoint == null || fireballPrefab == null) yield break;
+        if (firePoint == null || skill1Prefab == null) yield break;
 
         Transform gunBarrel = firePoint;
 
         GameObject bullet = GameObject.Instantiate(
-            rockprefab,
+            skill1Prefab,
             gunBarrel.position,
             Quaternion.identity
         );
@@ -68,7 +69,7 @@ public class PurpleWitch : Boss
             rb.linearVelocity = spreadDirection * bulletSpeed;
         }
     }
-    public override IEnumerator Skill3()
+    public override IEnumerator Skill3()  // Mưa băng
     {
 
 
@@ -90,10 +91,31 @@ public class PurpleWitch : Boss
                 );
 
 
-            GameObject rocks = GameObject.Instantiate(aoePrefab, randomPos, Quaternion.identity);
+            GameObject rocks = GameObject.Instantiate(skill3prefab, randomPos, Quaternion.identity);
 
             yield return new WaitForSeconds(spawnDelay);
             timer += spawnDelay;
+        }
+    }
+
+    public override IEnumerator Skill4() // đạn từ cổng không gian
+    {
+        yield return new WaitForSeconds(1f);
+
+        foreach (Transform point in firePoints)
+        {
+            // tính hướng tới player
+            Vector3 dir = (Player.transform.position - point.position).normalized;
+
+            GameObject missile = Instantiate(skill4Prefab, point.position, Quaternion.LookRotation(dir));
+
+            VoidSkill m = missile.GetComponent<VoidSkill>();
+            if (m != null)
+            {
+                m.SetDirection(dir);
+            }
+
+            yield return new WaitForSeconds(0.2f); // optional delay cho đẹp
         }
     }
 }
