@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::fallingice
   Player_Fire: {fileID: 6689293554398803747, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
   _player: {fileID: 7141482702132137852, guid: eada3be75fbd5084c9015c5f26fe6950, type: 3}
-  infor: {fileID: 11400000, guid: 53e868d9ad3774e4cb44b93c56f109ff, type: 2}
+  infor: {fileID: 11400000, guid: 7e8758b6a69f594478a8a86b9d593695, type: 2}
 --- !u!1001 &111537702459928658
 PrefabInstance:
   m_ObjectHideFlags: 0

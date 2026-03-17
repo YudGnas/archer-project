@@ -39,6 +39,8 @@ public class Player_Health : MonoBehaviour
     Color backMana = new Color(196f, 226f, 223f);
 
 
+    public float healingcost;
+
 
     void Start()
     {
@@ -66,7 +68,7 @@ public class Player_Health : MonoBehaviour
         UpdateHealingUI();
         if(Input.GetKeyDown(KeyCode.Alpha1) && timeH <= 0)
         {
-            Healing(player_Infor._maxHP * 3 / 10);
+            Healing(player_Infor._maxHP * healingcost / 10);
             Invoke("Turnoffeffect", 1.5f);
         }
     }
