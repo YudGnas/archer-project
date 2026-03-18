@@ -19,7 +19,7 @@ public class shield : MonoBehaviour
     
     void Start()
     {
-        shieldPrefab.SetActive(false);
+        //shieldPrefab.SetActive(false);
     }
 
     private void Update()
