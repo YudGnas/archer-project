@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.EventSystems;
+using static UnityEditor.Progress;
 public class InventoryManager : Singleton<InventoryManager>
 {
     [SerializeField] Transform _girdLayout;
@@ -11,7 +12,7 @@ public class InventoryManager : Singleton<InventoryManager>
     public List<ItemBase> Item => _item;
     [SerializeField] List<Transform> _itemSlot = new List<Transform>();
     public List<Transform> itemSlot => _itemSlot;
-    [SerializeField] private GameObject _currentSelectedItem;
+    public GameObject _currentSelectedItem;
     public void ShowUI(bool show)
     {
         gameObject.SetActive(show);
@@ -40,6 +41,42 @@ public class InventoryManager : Singleton<InventoryManager>
         // Highlight item mới
         Image newImage = _currentSelectedItem.GetComponent<Image>();
         newImage.color = Color.yellow; // màu khi được chọn
+    }
+    public bool AddItem(GameObject itemPrefab)
+    {
+        ItemBase newItemData = itemPrefab.GetComponent<ItemBase>();
+        if (newItemData == null) return false;
+
+        // 1. Tìm item cùng loại trong inventory
+        foreach (var item in _item)
+        {
+            if(item.Infor.itemID == newItemData.Infor.itemID)
+            {
+                item.quantity++;
+                return true;
+            }
+        }
+
+        // 2. Nếu chưa có → tìm slot trống
+        Transform targetSlot = _itemSlot
+            .FirstOrDefault(slot => slot.childCount == 0);
+
+        if (targetSlot == null)
+        {
+            Debug.Log("Inventory Full!");
+            return false;
+        }
+
+        // 3. Tạo item mới
+        GameObject newItem = Instantiate(itemPrefab, targetSlot);
+        newItem.transform.localScale = Vector3.one;
+
+        ItemBase itemBase = newItem.GetComponent<ItemBase>();
+        itemBase.quantity = 1;
+        _item.Add(itemBase);
+        SetupEvent(newItem);
+
+        return true;
     }
 
     public void Init()
@@ -96,71 +133,46 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    public bool AddItem(GameObject itemPrefab)
+    void SetupEvent(GameObject newItem)
     {
-        // Tìm slot trống đầu tiên
-        Transform targetSlot = _itemSlot
-            .FirstOrDefault(slot => slot.childCount == 0);
-
-        if (targetSlot == null)
-        {
-            Debug.Log("Inventory Full!");
-            return false;
-        }
-
-        // Tạo item trong inventory
-        GameObject newItem = Instantiate(itemPrefab, targetSlot);
-
-        // Reset scale nếu là UI
-        newItem.transform.localScale = Vector3.one;
-
-        // Thêm EventTrigger nếu chưa có
         EventTrigger trigger = newItem.GetComponent<EventTrigger>();
         if (trigger == null)
             trigger = newItem.AddComponent<EventTrigger>();
 
         trigger.triggers.Clear();
 
-        // Pointer Click
+        // Click
         var pClick = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerClick
         };
-
-        pClick.callback.AddListener(eventData =>
+        pClick.callback.AddListener((eventData) =>
         {
-            SelectItem(trigger.gameObject);
+            SelectItem(newItem);
         });
-
         trigger.triggers.Add(pClick);
 
-        // Pointer Down
-        EventTrigger.Entry pDown = new EventTrigger.Entry
+        // Down
+        var pDown = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerDown
         };
-
         pDown.callback.AddListener((eventData) =>
         {
             DragItem.Instant.setMovingItem(newItem);
         });
-
         trigger.triggers.Add(pDown);
 
-        // Pointer Up
-        EventTrigger.Entry pUp = new EventTrigger.Entry
+        // Up
+        var pUp = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerUp
         };
-
         pUp.callback.AddListener((eventData) =>
         {
             DragItem.Instant.removeMovingItem();
         });
-
         trigger.triggers.Add(pUp);
-
-        return true;
     }
     void Update()
     {
@@ -169,7 +181,13 @@ public class InventoryManager : Singleton<InventoryManager>
 
     public void UsingItem()
     {
-        NormalItem itemeffect = _currentSelectedItem.GetComponent<NormalItem>();
+        if (_currentSelectedItem == null) return;
+        ItemBase itemeffect = _currentSelectedItem.GetComponent<ItemBase>();
         itemeffect.Use();
+        if(itemeffect.roll == Item_roll.consume)
+        {
+            Destroy(_currentSelectedItem);
+            _item.Remove(itemeffect);
+        }
     }
 }

@@ -26,17 +26,10 @@ public class Boss : MonoBehaviour
     [SerializeField] protected int bulletCount => IsPhase2() ? 60 : 20;
     [SerializeField] protected float spreadAngle = 5f;
 
-    private bool hasEnteredPhase2 = false;
+    protected bool hasEnteredPhase2 = false;
 
-    public bool IsPhase2()
+    public virtual bool IsPhase2()
     {
-        if (!hasEnteredPhase2 && currentHP < enemy_Infor.maxHP / 2)
-        {
-            hasEnteredPhase2 = true;
-            currentHP = enemy_Infor.maxHP;
-            return true;
-        }
-
         return false;
     }
 

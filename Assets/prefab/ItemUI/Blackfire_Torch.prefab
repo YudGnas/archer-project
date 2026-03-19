@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: -6323758314203725033}
   - component: {fileID: 3826799820493311828}
   m_Layer: 5
-  m_Name: bloodtank
+  m_Name: Blackfire_Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,13 +253,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::blood_tank
   _infor: {fileID: 11400000, guid: deece3647ee76e44c8fd7634ce5cc25a, type: 2}
+  _quantity: 1
   _imageItem: {fileID: 3060098414738401429}
   _NameItem: {fileID: 3874358406979081652}
   _quantilyItem: {fileID: 4225649191015999259}
-  quantity: 1
-  roll: 2
-  _player_Health: {fileID: 0}
-  _player_infor: {fileID: 0}
+  _Health: {fileID: 0}
 --- !u!1 &8180832126866601474
 GameObject:
   m_ObjectHideFlags: 0

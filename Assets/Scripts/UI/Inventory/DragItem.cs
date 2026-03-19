@@ -47,22 +47,31 @@ public class DragItem : Singleton<DragItem>
     {
         if (_movingItem != null)
         {
-            //CheckTargetSlot();
-            if (_targetSlot == null && _targetSlot.childCount != 0)
+            if (_targetSlot == null)
             {
+                // Không có slot → trả về vị trí cũ
                 _movingItem.transform.SetParent(_parent);
-                _movingItem.transform.localPosition = Vector3.zero;
+            }
+            else if (_targetSlot.childCount == 0)
+            {
+                // Slot trống → đặt vào
+                _movingItem.transform.SetParent(_targetSlot);
             }
             else
             {
+                // Slot đã có item → swap
+                Transform oldItem = _targetSlot.GetChild(0);
+
+                oldItem.SetParent(_parent);
+                oldItem.localPosition = Vector3.zero;
+
                 _movingItem.transform.SetParent(_targetSlot);
-                _movingItem.transform.localPosition = Vector3.zero;
             }
 
+            _movingItem.transform.localPosition = Vector3.zero;
         }
+
         _movingItem = null;
         _targetSlot = null;
-
-        //DataManager.Instant.saveDataInventory();
     }
 }

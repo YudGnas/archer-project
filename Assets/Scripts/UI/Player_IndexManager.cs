@@ -1,11 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Player_IndexManager : MonoBehaviour
 {
     public Player_Infor Player_Infor;
-
+    public InventoryManager _InventoryManager;
     public GameObject Player_index;
 
     private bool isActive = false;
@@ -49,6 +49,13 @@ public class Player_IndexManager : MonoBehaviour
             {
                 Player_index.SetActive(false);
                 isActive = false;
+                if(_InventoryManager._currentSelectedItem != null)
+                {
+                    Image oldImage = _InventoryManager._currentSelectedItem.GetComponent<Image>();
+                    oldImage.color = Color.white; // trả về màu bình thường
+                    _InventoryManager._currentSelectedItem = null;
+                }
+                
             }
         }
     }

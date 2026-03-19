@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +25,7 @@ public class Player_Health : MonoBehaviour
 
     public float timeH;
     private float cooldown = 4f;
-    public ParticleSystem effect;
+    public ParticleSystem[] effect;
 
 
     public Text hp;
@@ -69,7 +70,7 @@ public class Player_Health : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1) && timeH <= 0)
         {
             Healing(player_Infor._maxHP * healingcost / 10);
-            Invoke("Turnoffeffect", 1.5f);
+            StartCoroutine(Turnoffeffect(0));
         }
     }
 
@@ -161,7 +162,7 @@ public class Player_Health : MonoBehaviour
 
     public void Healing(float heal)
     {
-        effect.Play();
+        effect[0].Play();
         timeH = cooldown;
         player_Infor._HP += heal;
         leftTime = 0;
@@ -199,8 +200,9 @@ public class Player_Health : MonoBehaviour
         float percent = timeH / cooldown;
         healing.fillAmount = Mathf.Lerp(healing.fillAmount, percent, 10f * Time.deltaTime);
     }
-    void Turnoffeffect()
+    public IEnumerator Turnoffeffect(int x)
     {
-        effect.Stop();
+        yield return new WaitForSeconds(1.5f); 
+        effect[x].Stop();
     }
 }

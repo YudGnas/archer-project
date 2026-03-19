@@ -118,4 +118,16 @@ public class PurpleWitch : Boss
             yield return new WaitForSeconds(0.2f); // optional delay cho đẹp
         }
     }
+
+    public override bool IsPhase2()
+    {
+        if (!hasEnteredPhase2 && currentHP < enemy_Infor.maxHP / 2)
+        {
+            hasEnteredPhase2 = true;
+            currentHP = enemy_Infor.maxHP;
+            return true;
+        }
+
+        return false;
+    }
 }

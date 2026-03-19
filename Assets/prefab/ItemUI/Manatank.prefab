@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: blood tank
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -148,9 +148,9 @@ GameObject:
   - component: {fileID: 5589860963144869594}
   - component: {fileID: 3060098414738401429}
   - component: {fileID: -6323758314203725033}
-  - component: {fileID: 3826799820493311828}
+  - component: {fileID: 586911968661221829}
   m_Layer: 5
-  m_Name: bloodtank
+  m_Name: Manatank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dc4b639bd10d42547b837eafefd02b00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd605edc1591ae941ac3e5cadff77233, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -240,7 +240,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &3826799820493311828
+--- !u!114 &586911968661221829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,10 +249,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7823788599134720934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b55f35e7a669c7747b1a5fa0dd3ea719, type: 3}
+  m_Script: {fileID: 11500000, guid: 909cd4f06da76644b8a0e303cee0b03d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::blood_tank
-  _infor: {fileID: 11400000, guid: deece3647ee76e44c8fd7634ce5cc25a, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::Mana_tank
+  _infor: {fileID: 11400000, guid: 0b27a34417924f5408f9f0b5aca3b80f, type: 2}
   _imageItem: {fileID: 3060098414738401429}
   _NameItem: {fileID: 3874358406979081652}
   _quantilyItem: {fileID: 4225649191015999259}

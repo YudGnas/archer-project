@@ -1,3 +1,4 @@
+using System.Buffers.Text;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Player", menuName = "Player_Infor")]
@@ -17,6 +18,31 @@ public class Player_Infor : ScriptableObject
     [SerializeField] private float Speedrun;
     [SerializeField] private float Speedwalk;
     [SerializeField] private float Lucky;
+
+    [HideInInspector] public float currentDamage;
+    [HideInInspector] public float currentmaxHP;
+    [HideInInspector] public float currentmaxMana;
+
+    public void ResetStats()
+    {
+        currentDamage = _Attack;
+        currentmaxHP = _maxHP;
+        currentmaxMana = _maxMana;
+    }
+
+    public void AddStats(ItemData item)
+    {
+        currentDamage += item.damage;
+        currentmaxHP += item.hp;
+        currentmaxMana += item.mana;
+    }
+
+    public void RemoveStats(ItemData item)
+    {
+        currentDamage -= item.damage;
+        currentmaxHP -= item.hp;
+        currentmaxMana -= item.mana;
+    }
 
     public float _lucky
     {
