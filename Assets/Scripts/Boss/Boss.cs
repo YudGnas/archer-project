@@ -28,6 +28,11 @@ public class Boss : MonoBehaviour
 
     protected bool hasEnteredPhase2 = false;
 
+
+
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+
     public virtual bool IsPhase2()
     {
         return false;
@@ -59,6 +64,10 @@ public class Boss : MonoBehaviour
 
     void Start()
     {
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+
+
         currentHP = enemy_Infor.maxHP;
         agent = GetComponent<NavMeshAgent>();
         _StateMachine = GetComponent<BossStateMachine>();
@@ -92,7 +101,7 @@ public class Boss : MonoBehaviour
         {
             if (Vector3.Distance(
                 new Vector3(transform.position.x, 0, transform.position.z),
-                new Vector3(transform.position.x, 0, transform.position.z)) < sightDistance)
+                new Vector3(_player.transform.position.x, 0, _player.transform.position.z)) < sightDistance)
             {
                 //Vector3 targetDirection = Vector3.ProjectOnPlane(_player.transform.position - transform.position,Vector3.up).normalized;
                 Vector3 targetDirection = (_player.transform.position
@@ -144,7 +153,7 @@ public class Boss : MonoBehaviour
         {
             _animator.SetTrigger("die");
             _Player_Health.GetXp(100);
-            Destroy(gameObject, 1f);
+            StartCoroutine(Die());
         }
     }
 
@@ -165,5 +174,50 @@ public class Boss : MonoBehaviour
     public virtual IEnumerator Skill4() 
     {
         yield break;
+    }
+
+    public IEnumerator Die()
+    {
+        _animator.SetTrigger("die");
+        _Player_Health.GetXp(100);
+
+        yield return new WaitForSeconds(1f);
+
+        gameObject.SetActive(false); // Ẩn boss thay vì destroy
+    }
+
+    public void ResetBoss()
+    {
+        gameObject.SetActive(true);
+
+        // reset vị trí
+        transform.position = startPosition;
+        transform.rotation = startRotation;
+
+        // reset máu + poise
+        currentHP = enemy_Infor.maxHP;
+        currentPoise = maxPoise;
+
+        // reset NavMesh
+        if (agent != null)
+        {
+            agent.Warp(startPosition); // QUAN TRỌNG (tránh bug NavMesh)
+            agent.ResetPath();
+        }
+
+        // reset animation
+        _animator.Rebind();
+        _animator.Update(0f);
+
+        // reset state machine
+        if (_StateMachine != null)
+        {
+            _StateMachine.Initialise();
+        }
+
+        // reset phase
+        hasEnteredPhase2 = false;
+
+        Debug.Log("Boss đã reset!");
     }
 }

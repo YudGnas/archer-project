@@ -25,6 +25,8 @@ public class Player_Fire : MonoBehaviour
 
     private float _timebetweefire;
     public float timebetweefire = 0.5f;
+
+    public Transform checkpoint;
     [Header("Skill")]
     [SerializeField] private GameObject SkillQPrefab;
     [SerializeField] private GameObject SkillEPrefab;
@@ -187,5 +189,18 @@ public class Player_Fire : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Shoot(bulletpre);
+    }
+
+
+    public void RespawnPlayer(Transform checkpoint)
+    {
+        controller._controller.enabled = false;
+        transform.position = checkpoint.position;
+        controller._controller.enabled = true;
+        player_Infor._HP = player_Infor._maxHP;
+        player_Infor._Mana = player_Infor._maxMana;
+        timeQ = 0;
+        timeE = 0;
+        timeR = 0;
     }
 }

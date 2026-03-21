@@ -87,4 +87,6 @@ public class Player_Controller : MonoBehaviour
             _animator.SetTrigger("Jump");
         }
     }
+
+
 }

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
+    public GameObject GameOverPanel;
     [SerializeField] private Player_Infor player_Infor;
     [SerializeField] private shield playerShield;
 
@@ -45,6 +46,7 @@ public class Player_Health : MonoBehaviour
 
     void Start()
     {
+        GameOverPanel.SetActive(false);
         _Controller = GetComponent<Player_Controller>();
         player_Infor._HP = player_Infor._maxHP;
         player_Infor._Mana = player_Infor._maxMana;
@@ -155,7 +157,10 @@ public class Player_Health : MonoBehaviour
             player_Infor._HP -= damage;
             _Controller._animator.SetTrigger("GetHit");
         }
-
+        if(_Infor._HP <= 0)
+        {
+            GameOverPanel.SetActive(true);
+        }
         leftTime = 0;
     }
 
