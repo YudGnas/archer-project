@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c40aff24076a7ed4484ce822b22c3e11
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 206831
+  packageName: Mesh Merger Lite
+  packageVersion: 1.12
+  assetPath: Assets/MeshMerger/Editor/MeshMergerEditor.cs
+  uploadId: 475992

@@ -1,4 +1,4 @@
-using GLTFast.Schema;
+﻿using GLTFast.Schema;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,7 +27,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private string currentState;
-    public Pathh _path;
+    public Transform roomCenter;
+    public float roomWidth = 10f;  // chiều ngang
+    public float roomLength = 8f;  // chiều dọc
     public GameObject DebugSphere;
 
 
@@ -76,7 +78,7 @@ public class Enemy : MonoBehaviour
 
     public virtual bool CanSeePlayer()
     {
-        if(_path != null)
+        if(roomCenter != null)
         {
             if(Vector3.Distance(transform.position, _player.transform.position) < sightDistance)
             {
@@ -109,7 +111,13 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightDistance);
     }
+    private void OnDrawGizmosSelected()
+    {
+        if (roomCenter == null) return;
 
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(roomCenter.position, new Vector3(roomWidth, 0.1f, roomLength));
+    }
     public virtual void TakeDamege(float damege)
     {
         currentHP -= damege;

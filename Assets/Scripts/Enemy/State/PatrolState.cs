@@ -1,17 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class PatrolState : BaseState
 {
-    private int waypointIndex;
     private float waitTime;
 
     [SerializeField] private float waitDuration = 1f;
-    [SerializeField] private float waypointOffsetRadius = 1.5f;
 
     public override void Enter()
-    {
-        waypointIndex = 0;
+    {       
         waitTime = 0f;
 
         enemy.Agent.speed = 3.5f;
@@ -19,7 +17,7 @@ public class PatrolState : BaseState
 
 
         SetupAgent();
-        MoveToWaypoint();
+        MoveToRandomPoint();
     }
 
     public override void Exit()
@@ -52,7 +50,6 @@ public class PatrolState : BaseState
 
     private void PatrolCircle()
     {
-        // Nếu chưa tới nơi thì return
         if (enemy.Agent.pathPending) return;
 
         if (enemy.Agent.remainingDistance <= enemy.Agent.stoppingDistance)
@@ -61,31 +58,34 @@ public class PatrolState : BaseState
 
             if (waitTime >= waitDuration)
             {
-                NextWaypoint();
-                MoveToWaypoint();
+                MoveToRandomPoint();
                 waitTime = 0f;
             }
         }
     }
-
-    private void NextWaypoint()
+    private void MoveToRandomPoint()
     {
-        if (waypointIndex < enemy._path.waypoint.Count - 1)
-            waypointIndex++;
-        else
-            waypointIndex = 0;
+        Vector3 randomPos = GetRandomPointInRoom();
+        enemy.Agent.SetDestination(randomPos);
     }
 
-    private void MoveToWaypoint()
+
+    private Vector3 GetRandomPointInRoom()
     {
-        Vector3 basePosition = enemy._path.waypoint[waypointIndex].position;
+        float randomX = Random.Range(- enemy.roomWidth / 2f, enemy.roomWidth / 2f);
+        float randomZ = Random.Range(- enemy.roomLength / 2f, enemy.roomLength / 2f);
 
-        // Random vị trí xung quanh waypoint
-        Vector3 randomOffset = Random.insideUnitSphere * waypointOffsetRadius;
-        randomOffset.y = 0;
+        Vector3 localOffset = new Vector3(randomX, 0, randomZ);
+        Vector3 worldPoint = enemy.roomCenter.TransformPoint(localOffset);
 
-        Vector3 targetPosition = basePosition + randomOffset;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(worldPoint, out hit, 2f, NavMesh.AllAreas))
+        {
+            return hit.position;
+        }
 
-        enemy.Agent.SetDestination(targetPosition);
+        return enemy.roomCenter.position;
     }
+
+
 }

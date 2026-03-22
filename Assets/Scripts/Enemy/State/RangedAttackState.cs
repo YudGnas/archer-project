@@ -7,9 +7,9 @@ public class RangedAttackState : BaseState
 
     [SerializeField] private float loseDuration = 5f;
     [SerializeField] private float rotateSpeed = 5f;
-    [SerializeField] private float bulletSpeed = 40f;
+    [SerializeField] private float bulletSpeed = 20f;
     [SerializeField] private float spreadAngle = 5f;
-    [SerializeField] private int bulletCount = 5;
+    [SerializeField] private int bulletCount = 2;
 
     public override void Enter()
     {

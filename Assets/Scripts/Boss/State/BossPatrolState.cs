@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class BossPatrolState : BossBaseState
 {    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private int waypointIndex;
     private float waitTime;
 
     [SerializeField] private float waitDuration = 1f;
-    [SerializeField] private float waypointOffsetRadius = 1.5f;
 
     public override void Enter()
     {
-        waypointIndex = 0;
         waitTime = 0f;
 
         boss.Agent.speed = 3.5f;
@@ -18,7 +16,7 @@ public class BossPatrolState : BossBaseState
 
 
         SetupAgent();
-        MoveToWaypoint();
+        MoveToRandomPoint();
     }
 
     public override void Exit()
@@ -46,7 +44,6 @@ public class BossPatrolState : BossBaseState
 
     private void PatrolCircle()
     {
-        // Nếu chưa tới nơi thì return
         if (boss.Agent.pathPending) return;
 
         if (boss.Agent.remainingDistance <= boss.Agent.stoppingDistance)
@@ -55,31 +52,33 @@ public class BossPatrolState : BossBaseState
 
             if (waitTime >= waitDuration)
             {
-                NextWaypoint();
-                MoveToWaypoint();
+                MoveToRandomPoint();
                 waitTime = 0f;
             }
         }
     }
 
-    private void NextWaypoint()
+    private void MoveToRandomPoint()
     {
-        if (waypointIndex < boss._path.waypoint.Count - 1)
-            waypointIndex++;
-        else
-            waypointIndex = 0;
+        Vector3 randomPos = GetRandomPointInRoom();
+        boss.Agent.SetDestination(randomPos);
     }
 
-    private void MoveToWaypoint()
+
+    private Vector3 GetRandomPointInRoom()
     {
-        Vector3 basePosition = boss._path.waypoint[waypointIndex].position;
+        float randomX = Random.Range(-boss.roomWidth / 2f, boss.roomWidth / 2f);
+        float randomZ = Random.Range(-boss.roomLength / 2f, boss.roomLength / 2f);
 
-        // Random vị trí xung quanh waypoint
-        Vector3 randomOffset = Random.insideUnitSphere * waypointOffsetRadius;
-        randomOffset.y = 0;
+        Vector3 localOffset = new Vector3(randomX, 0, randomZ);
+        Vector3 worldPoint = boss.roomCenter.TransformPoint(localOffset);
 
-        Vector3 targetPosition = basePosition + randomOffset;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(worldPoint, out hit, 2f, NavMesh.AllAreas))
+        {
+            return hit.position;
+        }
 
-        boss.Agent.SetDestination(targetPosition);
+        return boss.roomCenter.position;
     }
 }

@@ -7,24 +7,44 @@ public class Player_Retry : MonoBehaviour
     public GameObject player;
     public Transform towncheckpoint;
     public Transform checkpoint;
+    public GameObject panel;
 
     public Boss _boss;
 
     public void OnRetry()
-    {
-        Player_Fire playerFire = GetComponent<Player_Fire>();
-        if (playerFire != null)
-        {
-            playerFire.RespawnPlayer(checkpoint);
-        }
+    {   
+
+        CharacterController controller = player.GetComponent<CharacterController>();
+
+        controller.enabled = false;
+        player.transform.position = checkpoint.position;
+        controller.enabled = true;
         _boss.ResetBoss();
+        Time.timeScale = 1f;
+        Player_Health health = player.GetComponent<Player_Health>();
+        if (health != null)
+        {
+            health.ResetPlayer();
+        }
+        panel.SetActive(false);
     }
     public void OnBacktoTown()
     {
+
         CharacterController controller = player.GetComponent<CharacterController>();
 
         controller.enabled = false;
         player.transform.position = towncheckpoint.position;
         controller.enabled = true;
+        _boss.ResetBoss();
+        Time.timeScale = 1f;
+
+        Player_Health health = player.GetComponent<Player_Health>();
+        if (health != null)
+        {
+            health.ResetPlayer();
+        }
+        panel.SetActive(false);
+
     }
 }

@@ -4,7 +4,7 @@ public class Fireball : MonoBehaviour
 {
     private Rigidbody rb;
     private float speed;
-    private float damage = 50;
+    private float damage = 10;
     void DestroyBullet()
     {
         Destroy(gameObject);

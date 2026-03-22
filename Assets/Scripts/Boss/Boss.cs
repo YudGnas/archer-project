@@ -29,6 +29,10 @@ public class Boss : MonoBehaviour
     protected bool hasEnteredPhase2 = false;
 
 
+    public Transform roomCenter;
+    public float roomWidth = 10f;  // chiều ngang
+    public float roomLength = 8f;  // chiều dọc
+
 
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -54,7 +58,6 @@ public class Boss : MonoBehaviour
 
     [SerializeField]
     private string currentState;
-    public Pathh _path;
     public GameObject DebugSphere;
 
     [Header("SightDistance")]
@@ -97,7 +100,7 @@ public class Boss : MonoBehaviour
     }
     public bool CanSeePlayer()
     {
-        if (_path != null)
+        if (roomCenter != null)
         {
             if (Vector3.Distance(
                 new Vector3(transform.position.x, 0, transform.position.z),
@@ -156,7 +159,13 @@ public class Boss : MonoBehaviour
             StartCoroutine(Die());
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        if (roomCenter == null) return;
 
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(roomCenter.position, new Vector3(roomWidth, 0.1f, roomLength));
+    }
 
 
     public virtual IEnumerator Skill1() 

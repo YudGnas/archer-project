@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331542d30ba4b8043ba61881b826fcc7, type: 3}
   m_Name: Player_1
   m_EditorClassIdentifier: Assembly-CSharp::Player_Infor
-  HP: 100
+  HP: 160
   maxHP: 160
   Mana: 130
   maxMana: 130
@@ -25,3 +25,6 @@ MonoBehaviour:
   Speedrun: 6
   Speedwalk: 3
   Lucky: 10
+  currentDamage: 0
+  currentmaxHP: 0
+  currentmaxMana: 0

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4855c6a64c79a374f83f4071861c06ba
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 206831
+  packageName: Mesh Merger Lite
+  packageVersion: 1.12
+  assetPath: Assets/MeshMerger/Prefabs/BlueSphere.prefab
+  uploadId: 475992

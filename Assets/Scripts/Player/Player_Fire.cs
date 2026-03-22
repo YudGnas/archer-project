@@ -192,15 +192,5 @@ public class Player_Fire : MonoBehaviour
     }
 
 
-    public void RespawnPlayer(Transform checkpoint)
-    {
-        controller._controller.enabled = false;
-        transform.position = checkpoint.position;
-        controller._controller.enabled = true;
-        player_Infor._HP = player_Infor._maxHP;
-        player_Infor._Mana = player_Infor._maxMana;
-        timeQ = 0;
-        timeE = 0;
-        timeR = 0;
-    }
+
 }

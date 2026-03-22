@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 29faff2df1fc6874b9611ac3952f0bc1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 206831
+  packageName: Mesh Merger Lite
+  packageVersion: 1.12
+  assetPath: Assets/MeshMerger/Prefabs/GreenSphere.prefab
+  uploadId: 475992

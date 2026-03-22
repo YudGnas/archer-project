@@ -43,6 +43,8 @@ public class BossAttackState : BossBaseState
     public override void Exit()
     {
         boss.Agent.isStopped = false;
+        boss.Agent.updateRotation = true;
+        boss.Agent.angularSpeed = 120f;
     }
 
     public override void Perform()

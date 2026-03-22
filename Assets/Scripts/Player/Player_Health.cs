@@ -44,6 +44,11 @@ public class Player_Health : MonoBehaviour
     public float healingcost;
 
 
+    public void ResetPlayer()
+    {
+        player_Infor._HP = player_Infor._maxHP;
+        player_Infor._Mana = player_Infor._maxMana;
+    }
     void Start()
     {
         GameOverPanel.SetActive(false);
@@ -72,6 +77,7 @@ public class Player_Health : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1) && timeH <= 0)
         {
             Healing(player_Infor._maxHP * healingcost / 10);
+            timeH = cooldown;
             StartCoroutine(Turnoffeffect(0));
         }
     }
@@ -160,6 +166,7 @@ public class Player_Health : MonoBehaviour
         if(_Infor._HP <= 0)
         {
             GameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
         leftTime = 0;
     }
@@ -168,7 +175,7 @@ public class Player_Health : MonoBehaviour
     public void Healing(float heal)
     {
         effect[0].Play();
-        timeH = cooldown;
+
         player_Infor._HP += heal;
         leftTime = 0;
     }
