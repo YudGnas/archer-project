@@ -13,6 +13,16 @@ public class InventoryManager : Singleton<InventoryManager>
     [SerializeField] List<Transform> _itemSlot = new List<Transform>();
     public List<Transform> itemSlot => _itemSlot;
     public GameObject _currentSelectedItem;
+
+
+    int equipSlotCount = 4;
+
+    bool IsEquipSlot(Transform slot)
+    {
+        int index = _itemSlot.IndexOf(slot);
+        return index >= _itemSlot.Count - equipSlotCount;
+    }
+
     public void ShowUI(bool show)
     {
         gameObject.SetActive(show);
@@ -58,15 +68,19 @@ public class InventoryManager : Singleton<InventoryManager>
         }
 
         // 2. Nếu chưa có → tìm slot trống
-        Transform targetSlot = _itemSlot
-            .FirstOrDefault(slot => slot.childCount == 0);
-
-        if (targetSlot == null)
+        Transform targetSlot = _itemSlot.FirstOrDefault(slot =>
         {
-            Debug.Log("Inventory Full!");
-            return false;
-        }
+            if (slot.childCount > 0) return false;
 
+            bool isEquipSlot = IsEquipSlot(slot);
+
+            // Nếu là equip slot → chỉ nhận item equip
+            if (isEquipSlot)
+                return newItemData.roll == Item_roll.equip;
+
+            // Nếu là slot thường → không nhận item equip (tuỳ bạn)
+            return newItemData.roll != Item_roll.equip;
+        });
         // 3. Tạo item mới
         GameObject newItem = Instantiate(itemPrefab, targetSlot);
         newItem.transform.localScale = Vector3.one;

@@ -35,6 +35,7 @@ public enum Item_roll
 {
     normal,
     special,
+    equip,
     consume,
 }
 public enum EquipType
