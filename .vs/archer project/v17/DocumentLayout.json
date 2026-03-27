@@ -3,52 +3,36 @@
   "WorkspaceRootPath": "C:\\prj unity\\archer project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\ui\\inventory\\dragitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\inventory\\dragitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\murasaki_boom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\murasaki_boom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\ui\\inventory\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\inventory\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\aka.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\aka.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\ui\\inventory\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\inventory\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\ui\\boss_ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\boss_ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\ui\\inventory\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\inventory\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\murasaki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\murasaki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\game_manager\\player_retry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game_manager\\player_retry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|c:\\prj unity\\archer project\\assets\\scripts\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\player\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\ao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\ao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\bossfighting_gate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bossfighting_gate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\ui\\player_indexmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\player_indexmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\ui\\inventory\\item_effect\\mana_tank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\inventory\\item_effect\\mana_tank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\ui\\inventory\\item_effect\\blood_tank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\inventory\\item_effect\\blood_tank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|C:\\prj unity\\archer project\\assets\\scripts\\skill\\player\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7107613-16A6-85DD-80E3-2C1377FECA0E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\player\\skillbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -99,149 +83,103 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ItemData.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\ItemData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Inventory\\ItemData.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\ItemData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\Inventory\\ItemData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Boss_UI.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Boss_UI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Boss_UI.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Boss_UI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Boss_UI.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T18:31:36.116Z",
+              "WhenOpened": "2026-03-27T18:49:54.757Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InventoryManager.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\InventoryManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Inventory\\InventoryManager.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\InventoryManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\Inventory\\InventoryManager.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAmwFEAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T08:52:43.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Player_Controller.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Controller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Controller.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Controller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Controller.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBgAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T12:33:08.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "bossFighting_Gate.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\bossFighting_Gate.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\bossFighting_Gate.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\bossFighting_Gate.cs",
-              "RelativeToolTip": "Assets\\Scripts\\bossFighting_Gate.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwDAAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T12:29:36.755Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Player_Fire.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Fire.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Fire.cs",
-              "ViewState": "AQIAAKMAAAAAAAAAAAA5wMIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T12:17:55.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Player_Health.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Health.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Health.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Health.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Health.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAqwFQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T12:14:58.252Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Player_Retry.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Game_Manager\\Player_Retry.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Game_Manager\\Player_Retry.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Game_Manager\\Player_Retry.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Game_Manager\\Player_Retry.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAgAAAA",
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\Enemy.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Enemy\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\Enemy.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T12:13:19.171Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Player_IndexManager.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Player_IndexManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Player_IndexManager.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Player_IndexManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\Player_IndexManager.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAowAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T18:01:12.854Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Mana_tank.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\Item_effect\\Mana_tank.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Inventory\\Item_effect\\Mana_tank.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\Item_effect\\Mana_tank.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\Inventory\\Item_effect\\Mana_tank.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T17:37:26.783Z"
+              "WhenOpened": "2026-03-27T18:42:22.069Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DragItem.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\DragItem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Inventory\\DragItem.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\DragItem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\Inventory\\DragItem.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwDIAAAALAAAA",
+              "Title": "murasaki_Boom.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\murasaki_Boom.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\murasaki_Boom.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\murasaki_Boom.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\murasaki_Boom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T16:53:38.603Z",
+              "WhenOpened": "2026-03-27T18:39:51.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DataManager.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\DataManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Inventory\\DataManager.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\DataManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\Inventory\\DataManager.cs",
+              "Title": "murasaki.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\murasaki.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\murasaki.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\murasaki.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\murasaki.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T08:52:41.39Z"
+              "WhenOpened": "2026-03-27T17:46:09.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "blood_tank.cs",
-              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\Item_effect\\blood_tank.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Inventory\\Item_effect\\blood_tank.cs",
-              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\UI\\Inventory\\Item_effect\\blood_tank.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\Inventory\\Item_effect\\blood_tank.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "ao.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\ao.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\ao.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\ao.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\ao.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwAkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T15:49:42.569Z"
+              "WhenOpened": "2026-03-27T17:46:08.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "aka.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\aka.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\aka.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\aka.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\aka.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T17:46:06.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SkillBase.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Player\\SkillBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T17:42:59.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Player_Fire.cs",
+              "DocumentMoniker": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player_Fire.cs",
+              "ToolTip": "C:\\prj unity\\archer project\\Assets\\Scripts\\Player\\Player_Fire.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player_Fire.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAkwBAAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T12:17:55.826Z"
             }
           ]
         }

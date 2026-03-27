@@ -12,7 +12,7 @@ public class SkillBase : MonoBehaviour
     protected float trueDamege => infor.damege + _player._player_Infor._Attack;
 
 
-    void DestroyBullet()
+    protected void DestroyBullet()
     {
         Destroy(gameObject);
         enemyList.Clear();
@@ -28,27 +28,5 @@ public class SkillBase : MonoBehaviour
     {
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null && !enemyList.Contains(enemy))
-            {
-                enemy.TakeDamege(trueDamege);
-                enemyList.Add(enemy);
-            }
-            Destroy(gameObject, 2f);
-        }
-        if (other.CompareTag("Boss"))
-        {
-            Boss boss = other.GetComponent<Boss>();
-            if (boss != null && !BossList.Contains(boss))
-            {
-                boss.TakeDamage(trueDamege, infor.poiseDamage);
-                BossList.Add(boss);
-            }
-            Destroy(gameObject, 2f);
-        }
-    }
+
 }

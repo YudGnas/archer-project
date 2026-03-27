@@ -8,6 +8,7 @@ TagManager:
   - Boss
   - shield
   - skill
+  - ao
   layers:
   - Default
   - TransparentFX

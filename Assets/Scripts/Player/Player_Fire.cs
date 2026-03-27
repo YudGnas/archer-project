@@ -15,7 +15,6 @@ public class Player_Fire : MonoBehaviour
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] public Transform firePoint;
-    [SerializeField] public Transform firePoint2;
     [SerializeField] private float bulletSpeed = 20f;
 
 
@@ -87,13 +86,15 @@ public class Player_Fire : MonoBehaviour
             Player_Rotation();
             Attack("SkillE");
             timeE = SkillE.infor.cooldown;
+            SkillE.Shoot(SkillEPrefab, firePoint);
             controller._state = PlayerState.idel;
         }
         if(Input.GetKeyDown(KeyCode.Q) && timeQ <= 0 && player_Infor._Mana >= SkillQ.infor.manacost)
         {
-            timeQ = SkillQ.infor.cooldown;
+            
             Player_Rotation();
             Attack("SkillQ");
+            timeQ = SkillQ.infor.cooldown;
             SkillQ.Shoot(SkillQPrefab, firePoint);
             player_Health.Energyconsumption(SkillQ.infor.manacost);
             controller._state = PlayerState.idel;
@@ -103,7 +104,7 @@ public class Player_Fire : MonoBehaviour
             timeR = SkillR.infor.cooldown;
             Player_Rotation();
             Attack("SkillQ");
-            SkillR.Shoot(SkillRPrefab, firePoint2);
+            SkillR.Shoot(SkillRPrefab, firePoint);
             player_Health.Energyconsumption(SkillR.infor.manacost);
             controller._state = PlayerState.idel;
         }
