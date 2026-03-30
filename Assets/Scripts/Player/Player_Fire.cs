@@ -73,7 +73,7 @@ public class Player_Fire : MonoBehaviour
         UpdateSkillUI(CooldownE, SkillE, timeE);
         UpdateSkillUI(CooldownR, SkillR, timeR);
         UpdateShieldUI();
-        if (Input.GetKeyDown(KeyCode.F) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
+        if (Input.GetMouseButtonDown(1) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
         {   
             Player_Rotation();           
             Attack("attack");

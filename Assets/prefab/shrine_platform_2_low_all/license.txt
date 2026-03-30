@@ -1,0 +1,11 @@
+Model Information:
+* title:	shrine Platform 2 Low All
+* source:	https://sketchfab.com/3d-models/shrine-platform-2-low-all-5ecad2a67e9146d096bfd0e1d5f436f6
+* author:	Felis (https://sketchfab.com/Felis_red)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "shrine Platform 2 Low All" (https://sketchfab.com/3d-models/shrine-platform-2-low-all-5ecad2a67e9146d096bfd0e1d5f436f6) by Felis (https://sketchfab.com/Felis_red) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
