@@ -48,9 +48,10 @@ public class Player_Fire : MonoBehaviour
     private float timeE;
     private float timeR;
     private float time_Shield;
-    
 
 
+    public AudioSource _audio;
+    public AudioClip clip;
 
 
     void Start()
@@ -75,8 +76,10 @@ public class Player_Fire : MonoBehaviour
         UpdateShieldUI();
         if (Input.GetMouseButtonDown(1) && _timebetweefire <= 0 && player_Infor._Mana >= 10)
         {   
-            Player_Rotation();           
+            Player_Rotation();
             Attack("attack");
+            
+
             StartCoroutine(ShootDelay(0.5f, bulletPrefab));
             controller._state = PlayerState.idel;
 
@@ -85,6 +88,8 @@ public class Player_Fire : MonoBehaviour
         {        
             Player_Rotation();
             Attack("SkillE");
+
+            _audio.PlayOneShot(clip);
             timeE = SkillE.infor.cooldown;
             SkillE.Shoot(SkillEPrefab, firePoint);
             controller._state = PlayerState.idel;

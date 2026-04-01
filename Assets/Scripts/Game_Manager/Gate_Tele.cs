@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class Gate_Tele : MonoBehaviour
 {
+    public LoadingScene _loading;
+
     public Transform target;
 
     public GameObject player;
@@ -18,12 +21,16 @@ public class Gate_Tele : MonoBehaviour
     {
         if(cantele && Input.GetKey(KeyCode.F))
         {
-            Teleport();
+            StartCoroutine(Teleport());
         }
     }
 
-    public void Teleport()
+    public IEnumerator Teleport()
     {
+        _loading.FadeOut();
+
+        yield return new WaitForSeconds(1f);
+
         plane_target.SetActive(true);
 
         CharacterController controller = player.GetComponent<CharacterController>();
@@ -31,8 +38,11 @@ public class Gate_Tele : MonoBehaviour
         controller.enabled = false;
         player.transform.position = target.position;
         controller.enabled = true;
+      
+        yield return new WaitForSeconds(1f);
 
 
+        _loading.FadeIn();
         plane_current.SetActive(false);
     }
 

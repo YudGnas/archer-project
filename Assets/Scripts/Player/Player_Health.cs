@@ -35,10 +35,6 @@ public class Player_Health : MonoBehaviour
     [SerializeField] private float reconvertMana = 2f;
 
 
-    Color frontHP = new Color(113f, 209f, 40f);
-    Color backHP = new Color(255f, 0f, 0f);
-    Color frontMana = new Color(25f, 229f, 229f);
-    Color backMana = new Color(196f, 226f, 223f);
 
 
     public float healingcost;
@@ -92,7 +88,7 @@ public class Player_Health : MonoBehaviour
         if (fillB > hFration)
         {
             frontHealthBar.fillAmount = hFration;
-            backHealthBar.color = backHP;
+            backHealthBar.color = Color.white;
             leftTime += Time.deltaTime;
             float percentComplete = leftTime / chipSpeed;
             percentComplete = percentComplete * percentComplete;
@@ -101,7 +97,7 @@ public class Player_Health : MonoBehaviour
         }        
         if(fillF < hFration)
         {   
-            backHealthBar.color = frontHP;
+            backHealthBar.color = Color.white;
             backHealthBar.fillAmount = hFration;
             leftTime += Time.deltaTime;
             float percentComplete = leftTime / chipSpeed;
@@ -120,7 +116,7 @@ public class Player_Health : MonoBehaviour
         if (fillB > hFration)
         {
             frontManaBar.fillAmount = hFration;
-            backManaBar.color = backMana;
+            backManaBar.color = Color.white;
             leftTime += Time.deltaTime;
             float percentComplete = leftTime / chipSpeed;
             percentComplete = percentComplete * percentComplete;
@@ -128,7 +124,7 @@ public class Player_Health : MonoBehaviour
         }
         if (fillF < hFration)
         {
-            backManaBar.color = frontMana;
+            backManaBar.color = Color.white;
             backManaBar.fillAmount = hFration;
             leftTime += Time.deltaTime;
             float percentComplete = leftTime / chipSpeed;
@@ -145,7 +141,7 @@ public class Player_Health : MonoBehaviour
 
         if (fillB < hFration)
         {
-            backXPBar.color = frontMana;
+            backXPBar.color = Color.white;
             backXPBar.fillAmount = hFration;
             leftTime += Time.deltaTime;
             float percentComplete = leftTime / chipSpeed;

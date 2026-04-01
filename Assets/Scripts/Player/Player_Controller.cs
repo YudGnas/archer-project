@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 
 public enum PlayerState
@@ -12,6 +13,8 @@ public class Player_Controller : MonoBehaviour
 {
     [SerializeField] private Player_Infor Player_Infor;
     [SerializeField] private Player_Fire Player_Fire;
+    public AudioSource _audio;
+    public AudioClip clip;
     public PlayerState _state;
 
     public Player_Infor _player_Infor => Player_Infor;
@@ -25,6 +28,7 @@ public class Player_Controller : MonoBehaviour
     public CharacterController _controller;
     public Vector3 velocity; // dùng cho gravity
 
+    public bool isMoving;
 
     void Start()
     {
@@ -34,16 +38,24 @@ public class Player_Controller : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Jump();
-        ApplyGravity();
+        if(_state == PlayerState.idel)
+        {
+            Move();
+            //Jump();
+            ApplyGravity();
+        }
+        
+
+        HandleFootstepSound();
     }
 
     void Move()
-    {
+    {   
+        
         float playermovex = Input.GetAxisRaw("Horizontal"); 
         float playermovey = Input.GetAxisRaw("Vertical");
 
+        
 
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 camRight = Camera.main.transform.right;
@@ -56,9 +68,10 @@ public class Player_Controller : MonoBehaviour
         Vector3 move = (camForward * playermovey + camRight * playermovex).normalized;
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? Player_Infor._Speedrun : Player_Infor._Speedwalk; 
-        if (move != Vector3.zero && _state == PlayerState.idel)
-        { 
-            // Di chuyển
+        if (move != Vector3.zero)
+        {
+            
+            
             _controller.Move(move * speed * Time.deltaTime); 
             // Xoay hướng theo move
             Quaternion targetRotation = Quaternion.LookRotation(move); 
@@ -66,7 +79,9 @@ public class Player_Controller : MonoBehaviour
         } 
         // Animation
         _animator.SetFloat("walk", move.magnitude);
-        _animator.SetBool("isRunning", Input.GetKey(KeyCode.LeftShift)); 
+        _animator.SetBool("isRunning", Input.GetKey(KeyCode.LeftShift));
+
+        isMoving = move.magnitude > 0.1f && _controller.isGrounded;
     } 
     void ApplyGravity() 
     { 
@@ -88,5 +103,24 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
+    void HandleFootstepSound()
+    {
+        if (isMoving)
+        {
+            if (!_audio.isPlaying)
+            {
+                _audio.clip = clip;
+                _audio.loop = true;
+                _audio.Play();
+            }
+        }
+        else
+        {
+            if (_audio.isPlaying)
+            {
+                _audio.Stop();
+            }
+        }
+    }
 
 }
