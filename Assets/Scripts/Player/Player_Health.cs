@@ -162,7 +162,6 @@ public class Player_Health : MonoBehaviour
         if(_Infor._HP <= 0)
         {
             GameOverPanel.SetActive(true);
-            Time.timeScale = 0f;
         }
         leftTime = 0;
     }

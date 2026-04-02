@@ -27,6 +27,9 @@ public class Boss_UI : MonoBehaviour
     {
         UpdateUI(frontHealthBar, backHealthBar, enemy_Infor.currentHP, enemy_Infor.enemy_Infor.maxHP);
         UpdateUI(frontStunBar, backStunBar, enemy_Infor.currentPoise, enemy_Infor.maxPoise);
+
+
+        if (enemy_Infor.currentHP <= 0) BossHPUI.SetActive(false);
     }
 
     public void UpdateUI(Image front, Image back, float current, float max)

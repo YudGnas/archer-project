@@ -257,7 +257,7 @@ MonoBehaviour:
   _NameItem: {fileID: 3874358406979081652}
   _quantilyItem: {fileID: 4225649191015999259}
   quantity: 1
-  roll: 2
+  roll: 3
   _player_Health: {fileID: 0}
   _player_infor: {fileID: 0}
 --- !u!1 &8180832126866601474

@@ -10,6 +10,12 @@ public class Player_Retry : MonoBehaviour
     public GameObject panel;
 
     public Boss _boss;
+    public Player_Controller _Controller;
+
+    private void Start()
+    {
+        _Controller = player.GetComponent<Player_Controller>();
+    }
 
     public void OnRetry()
     {   
@@ -17,7 +23,7 @@ public class Player_Retry : MonoBehaviour
         CharacterController controller = player.GetComponent<CharacterController>();
 
         controller.enabled = false;
-        player.transform.position = checkpoint.position;
+        player.transform.position = _Controller.checkpoint.position;
         controller.enabled = true;
         _boss.ResetBoss();
         Time.timeScale = 1f;

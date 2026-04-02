@@ -10,10 +10,13 @@ public enum PlayerState
     idel
 }
 public class Player_Controller : MonoBehaviour
-{
+{   
+    
+    public AudioSource local_audio;
     [SerializeField] private Player_Infor Player_Infor;
     [SerializeField] private Player_Fire Player_Fire;
     public AudioSource _audio;
+    
     public AudioClip clip;
     public PlayerState _state;
 
@@ -29,6 +32,8 @@ public class Player_Controller : MonoBehaviour
     public Vector3 velocity; // dùng cho gravity
 
     public bool isMoving;
+
+    public Transform checkpoint;
 
     void Start()
     {

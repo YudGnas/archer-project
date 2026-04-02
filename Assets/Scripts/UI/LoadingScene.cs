@@ -17,16 +17,15 @@ public class LoadingScene : MonoBehaviour
 
     public IEnumerator FadeIn()
     {
-        fadeImage.DOFade(0f, duration).SetEase(Ease.InOutQuad);
+        fadeImage.DOFade(0f, duration).SetEase(Ease.InOutQuad).SetUpdate(true);
 
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSecondsRealtime(duration);
 
-        fadeImage.enabled = false;
     }
 
     public void FadeOut()
     {
-        fadeImage.DOFade(1f, duration).SetEase(Ease.InOutQuad);
+        fadeImage.DOFade(1f, duration).SetEase(Ease.InOutQuad).SetUpdate(true);
     }
 
     /*public void LoadScene(string sceneName)

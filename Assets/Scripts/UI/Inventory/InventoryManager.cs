@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.EventSystems;
+#if UNITY_EDITOR
 using static UnityEditor.Progress;
+#endif
 public class InventoryManager : Singleton<InventoryManager>
 {
     [SerializeField] Transform _girdLayout;
@@ -63,6 +65,7 @@ public class InventoryManager : Singleton<InventoryManager>
             if(item.Infor.itemID == newItemData.Infor.itemID)
             {
                 item.quantity++;
+                item._quantilyItem.text = item.quantity.ToString();
                 return true;
             }
         }
@@ -200,8 +203,13 @@ public class InventoryManager : Singleton<InventoryManager>
         itemeffect.Use();
         if(itemeffect.roll == Item_roll.consume)
         {
-            Destroy(_currentSelectedItem);
-            _item.Remove(itemeffect);
+            itemeffect.quantity--;
+            if(itemeffect.quantity <= 0)
+            {
+                Destroy(_currentSelectedItem);
+                _item.Remove(itemeffect);
+            }
+            
         }
     }
 }

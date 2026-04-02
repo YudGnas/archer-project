@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
+
 
 public class Gate_Tele : MonoBehaviour
 {
@@ -11,11 +13,15 @@ public class Gate_Tele : MonoBehaviour
     public GameObject plane_target;
     public GameObject plane_current;
 
+    //public AudioSource _audio;
+
+
+    private Player_Controller _Controller;
     bool cantele;
 
     void Start()
     {
-        
+        _Controller = player.GetComponent<Player_Controller>();
     }
     void Update()
     {
@@ -33,16 +39,24 @@ public class Gate_Tele : MonoBehaviour
 
         plane_target.SetActive(true);
 
+
+        AudioSource _audio = plane_target.GetComponent<AudioSource>();            
         CharacterController controller = player.GetComponent<CharacterController>();
 
         controller.enabled = false;
         player.transform.position = target.position;
         controller.enabled = true;
-      
+        _Controller.checkpoint = target;
         yield return new WaitForSeconds(1f);
 
 
-        _loading.FadeIn();
+        StartCoroutine(_loading.FadeIn());
+        if (_audio != null)
+        {
+            _Controller.local_audio = _audio;
+            _Controller.local_audio.Play();
+        }
+        
         plane_current.SetActive(false);
     }
 

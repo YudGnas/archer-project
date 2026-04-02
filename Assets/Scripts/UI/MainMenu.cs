@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
-    public Canvas _canvas;
+    public Player_Retry _Retry;
 
     public AudioSource _audioSource;
 
@@ -18,36 +18,65 @@ public class MainMenu : MonoBehaviour
     public GameObject Main_menu;
     public GameObject Main_menu_Text;
     public GameObject Setting;
-    public GameObject local;
-    public GameObject Player;
+    public GameObject SettingESC;
+    public GameObject GameOver;
+
+
+    public GameObject BacktoMenu;
+    public bool isActive_BacktoMenu;
+    public AudioSource local_audio;
+
+    public Player_Controller _player;
 
     //public Camera _camera;
     void Start()
     {
-        local.SetActive(false);
-        Player.SetActive(false);
+        local_audio = _player.local_audio;
         _camera.isPlay = false;
         Setting.SetActive(false);
+        SettingESC.SetActive(false);
+        BacktoMenu.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape) )
+        {
+            if (!isActive_BacktoMenu)
+            {
+                BacktoMenu.SetActive(true);
+                isActive_BacktoMenu = true;
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                BacktoMenu.SetActive(false);
+                isActive_BacktoMenu = false;
+                Time.timeScale = 1f;
+            }
+        } 
     }
 
     IEnumerator PlayGame()
     {
-        _loadingScene.fadeImage.enabled = true;
         _loadingScene.FadeOut();
         _audioSource.Play();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
         
-        _canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         Main_menu.SetActive(false);
-        local.SetActive(true);
+        local_audio.Play();
+        Time.timeScale = 1f;
+        yield return new WaitForSecondsRealtime(1f);       
+        StartCoroutine(_loadingScene.FadeIn());
+    }
 
-        yield return new WaitForSeconds(1f);
-        Player.SetActive(true);
-        StartCoroutine(_loadingScene.FadeIn()); ;
+    public void Button_Continue()
+    {
+        BacktoMenu.SetActive(false);
+        isActive_BacktoMenu = false;
+        Time.timeScale = 1f;
     }
 
     public void Button_Play()
@@ -61,6 +90,12 @@ public class MainMenu : MonoBehaviour
         _audioSource.Play();
         Main_menu_Text.SetActive(false);
         Setting.SetActive(true);
+    }    
+    public void Button_Setting_fromECS()
+    {
+        _audioSource.Play();
+        BacktoMenu.SetActive(false);
+        SettingESC.SetActive(true);
     }     
     public void Button_SettingBacktoMenu()
     {
@@ -68,22 +103,74 @@ public class MainMenu : MonoBehaviour
         Setting.SetActive(false);
         Main_menu_Text.SetActive(true);       
     }    
+    public void Button_SettingBacktoESC()
+    {
+        _audioSource.Play();
+        SettingESC.SetActive(false);
+        BacktoMenu.SetActive(true);       
+    }    
     public void Button_Quit()
     {
-
+        Application.Quit();
     }
 
-    public IEnumerator Button_BacktoMenu()
+    public IEnumerator BacktoMenu_fc()
     {
         _loadingScene.FadeOut();
         _audioSource.Play();
-        yield return new WaitForSeconds(1f);
-        _canvas.renderMode = RenderMode.ScreenSpaceCamera;
 
+        local_audio = _player.local_audio;
+        yield return new WaitForSecondsRealtime(1f);
+
+        local_audio.Stop();
+        local_audio.time = 0f;
+        BacktoMenu.SetActive(false);
+        Main_menu.SetActive(true);
+        yield return new WaitForSecondsRealtime(1f);
+        StartCoroutine(_loadingScene.FadeIn());
         
+    }    
+    public IEnumerator BacktoMenu_from_GameOVer()
+    {
+        _loadingScene.FadeOut();
+        _audioSource.Play();
 
-        yield return new WaitForSeconds(1f);
-
-        _loadingScene.FadeIn();
+        local_audio = _player.local_audio;
+        Time.timeScale = 1f;
+        yield return new WaitForSecondsRealtime(1f);
+        
+        local_audio.Stop();
+        local_audio.time = 0f;
+        GameOver.SetActive(false);
+        _Retry.OnRetry();
+        Main_menu.SetActive(true);
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 0f;
+        StartCoroutine(_loadingScene.FadeIn());
+        
+    }    
+    public IEnumerator PlayerRetry()
+    {
+        _loadingScene.FadeOut();
+        Time.timeScale = 1f;
+        yield return new WaitForSecondsRealtime(1f);
+        
+        GameOver.SetActive(false);
+        _Retry.OnRetry();
+        yield return new WaitForSecondsRealtime(1f);
+        StartCoroutine(_loadingScene.FadeIn());
+        
+    }
+    public void Button_BacktoMenu()
+    {
+        StartCoroutine(BacktoMenu_fc());
+    }    
+    public void Button_BacktoMenu_from_GameOver()
+    {
+        StartCoroutine(BacktoMenu_from_GameOVer());
+    }
+    public void Button_Retry()
+    {
+        StartCoroutine(PlayerRetry());
     }
 }
