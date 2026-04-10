@@ -10,6 +10,11 @@ public class ao : SkillBase
     [SerializeField] float maxDistance = 10f;
     [SerializeField] float pullForce = 20f;
 
+
+    public float attackCooldown = 1f;
+
+    private float timer;
+
     void Start()
     {
         startPos = transform.position;
@@ -20,6 +25,7 @@ public class ao : SkillBase
 
     void Update()
     {
+        timer += Time.deltaTime;
         if (isActivated) return;
 
         float distance = Vector3.Distance(startPos, transform.position);
@@ -47,36 +53,31 @@ public class ao : SkillBase
         if (isActivated) return;
 
         if (other.CompareTag("Enemy"))
-        {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
+        {        
+            if (timer >= attackCooldown)
             {
-                NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
-                if (agent != null)
+                Enemy enemy = other.GetComponent<Enemy>();
+                if (enemy != null)
                 {
-                    Vector3 dir = (transform.position - enemy.transform.position).normalized;
-                    agent.Move(dir * pullForce * Time.deltaTime);
+                    enemy.TakeDamege(trueDamege);
+                    Destroy(gameObject, 3f);
                 }
-
-                enemy.TakeDamege(trueDamege);
-                Destroy(gameObject, 3f);
+                timer = 0f;
             }
+            
         }
 
         if (other.CompareTag("Boss"))
         {
-            Boss boss = other.GetComponent<Boss>();
-            if (boss != null)
+            if (timer >= attackCooldown)
             {
-                NavMeshAgent agent = boss.GetComponent<NavMeshAgent>();
-                if (agent != null)
+                Boss boss = other.GetComponent<Boss>();
+                if (boss != null)
                 {
-                    Vector3 dir = (transform.position - boss.transform.position).normalized;
-                    agent.Move(dir * pullForce * Time.deltaTime);
+                
+                        boss.TakeDamage(trueDamege, infor.poiseDamage);
+                        Destroy(gameObject, 3f);
                 }
-
-                boss.TakeDamage(trueDamege, infor.poiseDamage);
-                Destroy(gameObject, 3f);
             }
         }
     }

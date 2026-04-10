@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad39492ee46ee49b1e1b362f02a06a, type: 3}
   m_Name: ao LV 1
   m_EditorClassIdentifier: Assembly-CSharp::Skill_infor
-  damege: 30
+  damege: 20
   cooldown: 5
   manacost: 30
   poiseDamage: 10

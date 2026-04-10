@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class pickupItem : MonoBehaviour
 {
     [SerializeField] private InventoryManager inventoryManager;
     private ItemBase _items;
     [SerializeField] private GameObject _itemUI;
+    [SerializeField] private GameObject _itemUI_canvas;
 
     public bool _canpickup = false;
     void Start()
@@ -31,6 +33,7 @@ public class pickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _canpickup = true;
+            _itemUI_canvas.SetActive(true);
         }
     }
 
@@ -39,6 +42,7 @@ public class pickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _canpickup = false;
+            _itemUI_canvas.SetActive(true);
         }
     }
 }

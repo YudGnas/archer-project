@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Wicht
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Infor
   role: 1
-  HP: 100
-  maxHP: 100
-  Mana: 0
-  maxMana: 100
+  maxHP: 200
   Speed: 3
   Speedrun: 5
   Attack: 10
